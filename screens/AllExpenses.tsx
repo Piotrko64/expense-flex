@@ -1,20 +1,42 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import { ExpensesOutput } from '../components/ExpensesOutput/ExpensesOuput';
 
 export function AllExpenses() {
-    return (
-        <View style={styles.container}>
-            <Text>Expensive Screen</Text>
-            <StatusBar style="auto" />
-        </View>
-    );
+    const expenseExample = [
+        {
+            id: 'el',
+            description: 'new shoes',
+            amount: '44.99',
+            date: new Date('2022-09-17'),
+        },
+        {
+            id: 'el1',
+            description: 'new book',
+            amount: '49.99',
+            date: new Date('2022-09-16'),
+        },
+        {
+            id: 'el2',
+            description: 'new hat',
+            amount: '44.99',
+            date: new Date('2022-09-15'),
+        },
+        {
+            id: 'el4',
+            description: 'bread!',
+            amount: '4.99',
+            date: new Date('2022-09-08'),
+        },
+    ];
+    return <ExpensesOutput periodExpenses="Total" expenses={expenseExample} />;
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 });
