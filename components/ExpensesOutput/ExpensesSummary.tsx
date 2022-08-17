@@ -9,28 +9,30 @@ export function ExpensesSummary({ expenses, periodName }: any) {
     return (
         <View style={styles.container}>
             <Text style={styles.period}>{periodName}</Text>
-            <Text style={styles.sum}>${expensesSummary}</Text>
+            <Text style={styles.sum}>${expensesSummary.toFixed(2)}</Text>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        padding: 8,
-        borderRadius: 6,
+        padding: 14,
+        borderRadius: 4,
         flexDirection: 'row',
-        backgroundColor: GlobalColors.primary50,
+        backgroundColor: GlobalColors.primary500,
         alignItems: 'center',
         justifyContent: 'space-between',
+        marginBottom: 10,
+        paddingHorizontal: 12,
     },
     period: {
-        fontSize: 12,
-        color: GlobalColors.primary400,
+        fontSize: 20,
+        color: GlobalColors.primary50,
+        fontWeight: '400',
     },
     sum: {
-        fontSize: 16,
+        fontSize: 20,
         fontWeight: 'bold',
-        color: GlobalColors.primary500,
+        color: GlobalColors.accent700,
     },
 });
