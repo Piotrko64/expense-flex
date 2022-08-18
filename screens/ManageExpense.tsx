@@ -1,21 +1,36 @@
 import { useLayoutEffect } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { useDispatch } from "react-redux";
 import { CustomButton } from "../components/UI/CustomButton";
 import { IconButton } from "../components/UI/IconButton";
 import { GlobalColors } from "../constants/styles";
+import { expenseExample } from "../data/dummyData/expensesExample";
+import { removeExpense } from "../store/expenses";
+import { findExpenseById } from "../util/findExpenseById";
 
 export function ManageExpense({ route, navigation }: any) {
     const editedExpenseId = route.params?.expenseId;
     const isEditing = !!editedExpenseId;
 
+    const dispatch = useDispatch();
+
     useLayoutEffect(() => {
-        console.log(isEditing, route);
         navigation.setOptions({
-            title: isEditing ? "Edit Expense" : "Add Expense",
+            title: isEditing
+                ? `${
+                      findExpenseById(expenseExample, editedExpenseId)
+                          ?.description || "Edit Expense"
+                  }`
+                : "Add Expense",
         });
     }, [navigation, isEditing]);
 
-    function deleteExpense() {}
+    function deleteExpense() {
+        console.log(editedExpenseId);
+
+        navigation.goBack();
+        dispatch(removeExpense(editedExpenseId));
+    }
 
     function cancelModalHandler() {
         navigation.goBack();
