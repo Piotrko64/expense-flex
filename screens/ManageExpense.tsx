@@ -52,7 +52,7 @@ export function ManageExpense({ route, navigation }: any) {
     return (
         <View style={styles.backgroundContainer}>
             <ScrollView contentContainerStyle={styles.container}>
-                <ExpenseForm />
+                <ExpenseForm id={editedExpenseId} />
                 <View style={styles.buttonsContainer}>
                     <CustomButton mode="flat" onPress={cancelModalHandler}>
                         Cancel

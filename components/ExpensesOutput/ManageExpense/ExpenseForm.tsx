@@ -2,16 +2,44 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import { Input } from "./Input";
 import { getFormattedDate } from "../../../util/getFormatDate";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GlobalColors } from "../../../constants/styles";
+import { findExpenseById } from "../../../util/findExpenseById";
+import { useSelector } from "react-redux";
+import { OneExpense } from "../../../@types/OneExpense";
+import { ExpenseData } from "../../../@types/ExpenseData";
 
-export function ExpenseForm() {
+export function ExpenseForm({ id }: { id: string }) {
     const [openDataPicker, setOpenDataPicker] = useState(false);
-    const [date, setDate] = useState(new Date());
+    const [inputsValue, setInputsValue] = useState({
+        date: new Date(),
+        amount: "0",
+        description: "",
+    });
 
-    function setExpenseDate() {}
+    const allExpenses = useSelector((state: any) => state.expensesReducer);
 
-    function amountChangedHandler() {}
+    useEffect(() => {
+        const expense = findExpenseById(allExpenses, id);
+        if (expense) {
+            setInputsValue((values) => ({
+                ...values,
+                date: new Date(expense.date),
+                amount: expense.amount,
+                description: expense.description,
+            }));
+        }
+    }, [id]);
+
+    function setDataInputHandler(
+        inputIdentifier: ExpenseData,
+        enteredValue: string
+    ) {
+        setInputsValue((inputValues) => ({
+            ...inputValues,
+            [inputIdentifier]: enteredValue,
+        }));
+    }
 
     return (
         <View>
@@ -21,31 +49,39 @@ export function ExpenseForm() {
             >
                 <View style={styles.dateButton}>
                     <Text style={styles.textButton}>
-                        {getFormattedDate(date.toISOString())}
+                        {getFormattedDate(inputsValue.date.toISOString())}
                     </Text>
                 </View>
             </Pressable>
 
             {openDataPicker && (
                 <DateTimePicker
-                    value={date}
+                    value={inputsValue.date}
                     onChange={(value) => {
                         setOpenDataPicker(false);
-                        setDate(new Date(value.nativeEvent.timestamp!));
+                        setInputsValue((values) => ({
+                            ...values,
+                            date: new Date(value.nativeEvent.timestamp!),
+                        }));
                     }}
                 />
             )}
 
             <Input
                 label="Name"
-                textConfig={{ multiline: true, autoCorrect: false }}
+                textConfig={{
+                    multiline: true,
+                    autoCorrect: false,
+                }}
+                value={inputsValue.description}
             />
             <Input
                 label="Amount"
                 textConfig={{
                     keyboardType: "decimal-pad",
-                    onChangeText: amountChangedHandler,
+                    onChangeText: (text) => setDataInputHandler("amount", text),
                 }}
+                value={inputsValue.amount}
             />
         </View>
     );

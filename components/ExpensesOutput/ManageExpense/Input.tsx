@@ -1,6 +1,4 @@
 import {
-    InputAccessoryView,
-    StyleProp,
     StyleSheet,
     Text,
     TextInput,
@@ -13,20 +11,22 @@ import { GlobalColors } from "../../../constants/styles";
 export function Input({
     label,
     textConfig,
+    value,
 }: {
     label: string;
     textConfig: TextInputProps;
+    value?: string;
 }) {
     const inputStyles: Array<ViewStyle> = [styles.input];
 
     if (textConfig?.multiline) {
         inputStyles.push(styles.inputMultiline);
     }
-
+    console.log(textConfig);
     return (
         <View style={styles.inputContainer}>
             <Text style={styles.label}>{label}</Text>
-            <TextInput {...textConfig} style={inputStyles} />
+            <TextInput {...textConfig} style={inputStyles} value={value} />
         </View>
     );
 }
