@@ -11,6 +11,7 @@ import { IconButton } from "./components/UI/IconButton";
 import { IconImage } from "./components/UI/IconImage";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
+import { ImageBackground, StyleSheet } from "react-native";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -86,7 +87,7 @@ export default function App() {
                     <Stack.Navigator
                         screenOptions={{
                             headerStyle: {
-                                backgroundColor: GlobalColors.primary200,
+                                backgroundColor: GlobalColors.primary500,
                             },
                             headerTintColor: "white",
                         }}
@@ -112,3 +113,12 @@ export default function App() {
         </>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    backgroundImage: {
+        opacity: 0.95,
+    },
+});

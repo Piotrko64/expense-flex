@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { expenseExample } from "../data/dummyData/expensesExample";
-import { v4 } from "uuid";
+import uuid from "react-native-uuid";
 import { findIndexExpense } from "../util/findExpenseById";
 
 const expensesSlice = createSlice({
@@ -8,10 +8,9 @@ const expensesSlice = createSlice({
     initialState: expenseExample,
     reducers: {
         addExpense: (state, action) => {
-            state.unshift({ ...action.payload, id: v4() });
+            state.unshift({ ...action.payload, id: uuid.v4() });
         },
         removeExpense: (state, action) => {
-            console.log(action.payload, state);
             return state.filter((expense) => expense.id !== action.payload);
         },
         updateExpense: (state, action) => {

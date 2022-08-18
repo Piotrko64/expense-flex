@@ -1,11 +1,11 @@
 import { useLayoutEffect } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
 import { useDispatch } from "react-redux";
 import { CustomButton } from "../components/UI/CustomButton";
 import { IconButton } from "../components/UI/IconButton";
 import { GlobalColors } from "../constants/styles";
 import { expenseExample } from "../data/dummyData/expensesExample";
-import { removeExpense } from "../store/expenses";
+import { addExpense, removeExpense, updateExpense } from "../store/expenses";
 import { findExpenseById } from "../util/findExpenseById";
 
 export function ManageExpense({ route, navigation }: any) {
@@ -14,29 +14,52 @@ export function ManageExpense({ route, navigation }: any) {
 
     const dispatch = useDispatch();
 
+    const descriptionExpense =
+        findExpenseById(expenseExample, editedExpenseId)?.description ||
+        "Edit Expense";
+
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: isEditing
-                ? `${
-                      findExpenseById(expenseExample, editedExpenseId)
-                          ?.description || "Edit Expense"
-                  }`
-                : "Add Expense",
+            title: isEditing ? `${descriptionExpense}` : "Add Expense",
         });
     }, [navigation, isEditing]);
 
     function deleteExpense() {
-        console.log(editedExpenseId);
+        Alert.alert(descriptionExpense, "Do you want delete this expense?", [
+            {
+                text: "Cancel",
 
-        navigation.goBack();
-        dispatch(removeExpense(editedExpenseId));
+                style: "destructive",
+            },
+
+            {
+                text: "Yes",
+                onPress: () => {
+                    navigation.goBack();
+                    dispatch(removeExpense(editedExpenseId));
+                },
+            },
+        ]);
     }
 
     function cancelModalHandler() {
         navigation.goBack();
     }
 
-    function confirmHandler() {}
+    function confirmHandler() {
+        if (isEditing) {
+            dispatch(updateExpense(editedExpenseId));
+        } else {
+            dispatch(
+                addExpense({
+                    id: "asad",
+                    date: new Date().toISOString(),
+                    description: "aa",
+                    amount: "44.46",
+                })
+            );
+        }
+    }
     return (
         <View style={styles.container}>
             <View style={styles.buttonsContainer}>
@@ -77,6 +100,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 24,
-        backgroundColor: GlobalColors.primary100,
+        backgroundColor: GlobalColors.primary500White,
     },
 });
