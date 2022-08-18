@@ -22,7 +22,7 @@ export function Input({
     if (textConfig?.multiline) {
         inputStyles.push(styles.inputMultiline);
     }
-    console.log(textConfig);
+
     return (
         <View style={styles.inputContainer}>
             <Text style={styles.label}>{label}</Text>

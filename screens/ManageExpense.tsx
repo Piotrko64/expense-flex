@@ -1,14 +1,13 @@
 import { useLayoutEffect } from "react";
-import { Alert, ScrollView, StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import { useDispatch } from "react-redux";
 import { OneExpense } from "../@types/OneExpense";
 import { ExpenseForm } from "../components/ExpensesOutput/ManageExpense/ExpenseForm";
-import { CustomButton } from "../components/UI/CustomButton";
 import { IconButton } from "../components/UI/IconButton";
 import { GlobalColors } from "../constants/styles";
 import { expenseExample } from "../data/dummyData/expensesExample";
 import { useAlertDelete } from "../hooks/useAlertDelete";
-import { addExpense, removeExpense, updateExpense } from "../store/expenses";
+import { addExpense, updateExpense } from "../store/expenses";
 import { findExpenseById } from "../util/findExpenseById";
 
 export function ManageExpense({ route, navigation }: any) {
@@ -32,24 +31,25 @@ export function ManageExpense({ route, navigation }: any) {
         showAlert();
     }
 
+    function cancelModalHandler() {
+        navigation.goBack();
+    }
+
     function confirmHandler({ date, description, amount }: OneExpense) {
+        const objectData = {
+            id: editedExpenseId,
+            date: new Date(date).toISOString(),
+            description,
+            amount,
+        };
+
         if (isEditing) {
-            dispatch(updateExpense(editedExpenseId));
+            dispatch(updateExpense(objectData));
         } else {
-            console.log({
-                date: new Date(date).toISOString(),
-                description,
-                amount,
-            });
-            dispatch(
-                addExpense({
-                    date: new Date(date).toISOString(),
-                    description,
-                    amount,
-                })
-            );
+            dispatch(addExpense(objectData));
         }
     }
+
     return (
         <View style={styles.backgroundContainer}>
             <ScrollView contentContainerStyle={styles.container}>
@@ -57,6 +57,7 @@ export function ManageExpense({ route, navigation }: any) {
                     id={editedExpenseId}
                     isEditing={isEditing}
                     confirmHandler={confirmHandler}
+                    cancelModalHandler={cancelModalHandler}
                 />
 
                 {isEditing && (

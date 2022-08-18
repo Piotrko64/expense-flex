@@ -8,30 +8,30 @@ import { findExpenseById } from "../../../util/findExpenseById";
 import { useSelector } from "react-redux";
 import { ExpenseData } from "../../../@types/ExpenseData";
 import { CustomButton } from "../../UI/CustomButton";
-import { useNavigation } from "@react-navigation/native";
 import { OneExpense } from "../../../@types/OneExpense";
+import { ExpensesReducerInterface } from "../../../@types/_reducers/ExpensesReducerInterface";
 
 export function ExpenseForm({
     id,
-
     isEditing,
     confirmHandler,
+    cancelModalHandler,
 }: {
     id: string;
-
     isEditing: boolean;
+    cancelModalHandler: () => void;
     confirmHandler: (data: OneExpense) => void;
 }) {
     const [openDataPicker, setOpenDataPicker] = useState(false);
     const [inputsValue, setInputsValue] = useState({
         date: new Date(),
-        amount: "0",
+        amount: "",
         description: "",
     });
 
-    const navigation = useNavigation();
-
-    const allExpenses = useSelector((state: any) => state.expensesReducer);
+    const allExpenses = useSelector(
+        (state: ExpensesReducerInterface) => state.expensesReducer
+    );
 
     useEffect(() => {
         const expense = findExpenseById(allExpenses, id);
@@ -55,10 +55,6 @@ export function ExpenseForm({
         }));
     }
 
-    function cancelModalHandler() {
-        navigation.goBack();
-    }
-
     return (
         <View>
             <Pressable
@@ -75,6 +71,7 @@ export function ExpenseForm({
             {openDataPicker && (
                 <DateTimePicker
                     value={inputsValue.date}
+                    maximumDate={new Date()}
                     onChange={(value) => {
                         setOpenDataPicker(false);
                         setDataInputHandler(

@@ -4,8 +4,17 @@ import { LinearGradient } from "expo-linear-gradient";
 import { ExpensesList } from "./ExpensesList";
 import { ExpensesSummary } from "./ExpensesSummary";
 import { GlobalColors } from "../../constants/styles";
+import { useUpdateAsyncStorage } from "../../hooks/useAsyncStorage";
+import { OneExpense } from "../../@types/OneExpense";
 
-export function ExpensesOutput({ expenses, periodExpenses }: any) {
+export function ExpensesOutput({
+    expenses,
+    periodExpenses,
+}: {
+    expenses: Array<OneExpense>;
+    periodExpenses: string;
+}) {
+    useUpdateAsyncStorage();
     return (
         <View style={styles.container}>
             <LinearGradient

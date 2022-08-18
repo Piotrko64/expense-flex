@@ -9,9 +9,13 @@ import { GlobalColors } from "./constants/styles";
 import { Ionicons } from "@expo/vector-icons";
 import { IconButton } from "./components/UI/IconButton";
 import { IconImage } from "./components/UI/IconImage";
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
 import { store } from "./store/store";
 import { ImageBackground, StyleSheet } from "react-native";
+import { useUpdateAsyncStorage } from "./hooks/useAsyncStorage";
+import { useAsyncStorage } from "@react-native-async-storage/async-storage";
+import { useEffect } from "react";
+import { updateExpense } from "./store/expenses";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();

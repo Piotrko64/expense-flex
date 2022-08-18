@@ -36,7 +36,7 @@ export function ExpenseItem({ id, description, date, amount }: any) {
                     </Text>
                 </View>
                 <View style={styles.priceContainer}>
-                    <Text style={styles.amount}>{amount}</Text>
+                    <Text style={styles.amount}>{+amount}</Text>
                 </View>
             </View>
         </Pressable>
