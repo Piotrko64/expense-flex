@@ -1,11 +1,13 @@
-import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, Vibration, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { GlobalColors } from "../../constants/styles";
 import { getFormattedDate } from "../../util/getFormatDate";
+import { useAlertDelete } from "../../hooks/useAlertDelete";
 
 export function ExpenseItem({ id, description, date, amount }: any) {
     const navigation = useNavigation<any>();
+    const [showAlert] = useAlertDelete(description, id);
 
     function expensePressHandler() {
         navigation.navigate("ManageExpense", {
@@ -13,10 +15,16 @@ export function ExpenseItem({ id, description, date, amount }: any) {
         });
     }
 
+    function deleteItemOnlongPress() {
+        Vibration.vibrate(40);
+        showAlert(false);
+    }
+
     return (
         <Pressable
             onPress={expensePressHandler}
             style={({ pressed }) => pressed && styles.pressed}
+            onLongPress={deleteItemOnlongPress}
         >
             <View style={styles.expenseItem}>
                 <View>
