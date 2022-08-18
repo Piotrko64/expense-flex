@@ -1,5 +1,6 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native';
-import { GlobalColors } from '../../constants/styles';
+import { FlatList, StyleSheet, Text, View } from "react-native";
+import { GlobalColors } from "../../constants/styles";
+import { IconImage } from "../UI/IconImage";
 
 export function ExpensesSummary({ expenses, periodName }: any) {
     const expensesSummary = expenses.reduce((sum: number, expense: any) => {
@@ -18,21 +19,21 @@ const styles = StyleSheet.create({
     container: {
         padding: 14,
         borderRadius: 4,
-        flexDirection: 'row',
+        flexDirection: "row",
         backgroundColor: GlobalColors.primary500,
-        alignItems: 'center',
-        justifyContent: 'space-between',
+        alignItems: "center",
+        justifyContent: "space-between",
         marginBottom: 10,
         paddingHorizontal: 12,
     },
     period: {
         fontSize: 20,
         color: GlobalColors.primary50,
-        fontWeight: '400',
+        fontWeight: "400",
     },
     sum: {
         fontSize: 20,
-        fontWeight: 'bold',
+        fontWeight: "bold",
         color: GlobalColors.accent700,
     },
 });
