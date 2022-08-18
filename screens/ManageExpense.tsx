@@ -1,6 +1,7 @@
 import { useLayoutEffect } from "react";
 import { Alert, ScrollView, StyleSheet, View } from "react-native";
 import { useDispatch } from "react-redux";
+import { OneExpense } from "../@types/OneExpense";
 import { ExpenseForm } from "../components/ExpensesOutput/ManageExpense/ExpenseForm";
 import { CustomButton } from "../components/UI/CustomButton";
 import { IconButton } from "../components/UI/IconButton";
@@ -31,20 +32,20 @@ export function ManageExpense({ route, navigation }: any) {
         showAlert();
     }
 
-    function cancelModalHandler() {
-        navigation.goBack();
-    }
-
-    function confirmHandler() {
+    function confirmHandler({ date, description, amount }: OneExpense) {
         if (isEditing) {
             dispatch(updateExpense(editedExpenseId));
         } else {
+            console.log({
+                date: new Date(date).toISOString(),
+                description,
+                amount,
+            });
             dispatch(
                 addExpense({
-                    id: "asad",
-                    date: new Date().toISOString(),
-                    description: "aa",
-                    amount: "44.46",
+                    date: new Date(date).toISOString(),
+                    description,
+                    amount,
                 })
             );
         }
@@ -52,15 +53,12 @@ export function ManageExpense({ route, navigation }: any) {
     return (
         <View style={styles.backgroundContainer}>
             <ScrollView contentContainerStyle={styles.container}>
-                <ExpenseForm id={editedExpenseId} />
-                <View style={styles.buttonsContainer}>
-                    <CustomButton mode="flat" onPress={cancelModalHandler}>
-                        Cancel
-                    </CustomButton>
-                    <CustomButton onPress={confirmHandler}>
-                        {isEditing ? "Update" : "Add"}
-                    </CustomButton>
-                </View>
+                <ExpenseForm
+                    id={editedExpenseId}
+                    isEditing={isEditing}
+                    confirmHandler={confirmHandler}
+                />
+
                 {isEditing && (
                     <View style={styles.deleteContainer}>
                         <IconButton
@@ -84,12 +82,7 @@ const styles = StyleSheet.create({
         borderTopColor: GlobalColors.primary200,
         alignItems: "center",
     },
-    buttonsContainer: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        marginTop: 40,
-    },
+
     container: {
         padding: 24,
     },

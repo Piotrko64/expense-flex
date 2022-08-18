@@ -8,6 +8,7 @@ const expensesSlice = createSlice({
     initialState: expenseExample,
     reducers: {
         addExpense: (state, action) => {
+            console.log(state);
             state.unshift({ ...action.payload, id: uuid.v4() });
         },
         removeExpense: (state, action) => {
