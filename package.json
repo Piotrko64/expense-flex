@@ -20,6 +20,7 @@
         "@react-navigation/native-stack": "^6.5.0",
         "@reduxjs/toolkit": "^1.8.4",
         "date-fns": "^2.29.1",
+        "eas-cli": "^0.60.0",
         "expo": "~44.0.0",
         "expo-linear-gradient": "~11.0.3",
         "expo-status-bar": "~1.2.0",

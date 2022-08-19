@@ -28,3 +28,5 @@ export const expensesReducer = expensesSlice.reducer;
 export const addExpense = expensesSlice.actions.addExpense;
 export const removeExpense = expensesSlice.actions.removeExpense;
 export const updateExpense = expensesSlice.actions.updateExpense;
+
+export const updateAll = expensesSlice.actions.updateAll;

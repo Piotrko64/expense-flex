@@ -15,11 +15,8 @@ export function ExpensesOutput({
     expenses: Array<OneExpense>;
     periodExpenses: string;
 }) {
-    const [update, show] = useUpdateAsyncStorage();
-    useEffect(() => {
-        update();
-        console.log(show());
-    }, []);
+    useUpdateAsyncStorage();
+
     return (
         <View style={styles.container}>
             <LinearGradient

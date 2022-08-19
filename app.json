@@ -1,16 +1,16 @@
 {
     "expo": {
-        "name": "expend-flex",
+        "name": "Expend Flex",
         "slug": "expend-flex",
         "version": "1.0.0",
         "orientation": "portrait",
-        "icon": "./assets/icon.png",
+        "icon": "./assets/basicIcons/iconSplash.png",
         "userInterfaceStyle": "light",
         "backgroundColor": "#A7BAF2",
         "splash": {
-            "image": "./assets/splash.png",
+            "image": "./assets/splashScreen.png",
             "resizeMode": "contain",
-            "backgroundColor": "#ffffff"
+            "backgroundColor": "#000"
         },
         "updates": {
             "fallbackToCacheTimeout": 0
@@ -21,9 +21,10 @@
         },
         "android": {
             "adaptiveIcon": {
-                "foregroundImage": "./assets/adaptive-icon.png",
-                "backgroundColor": "#FFFFFF"
-            }
+                "foregroundImage": "./assets/basicIcons/iconSplash.png",
+                "backgroundColor": "#000"
+            },
+            "package": "com.piotrko64.expendflex"
         },
         "web": {
             "favicon": "./assets/favicon.png"
