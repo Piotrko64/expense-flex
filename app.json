@@ -1,10 +1,10 @@
 {
     "expo": {
-        "name": "Expend Flex",
-        "slug": "expend-flex",
+        "name": "Expense Flex",
+        "slug": "expense-flex",
         "version": "1.0.0",
         "orientation": "portrait",
-        "icon": "./assets/basicIcons/iconSplash.png",
+        "icon": "./assets/basicIcons/iconSplash1.png",
         "userInterfaceStyle": "dark",
         "backgroundColor": "#A7BAF2",
         "splash": {
@@ -21,10 +21,10 @@
         },
         "android": {
             "adaptiveIcon": {
-                "foregroundImage": "./assets/basicIcons/iconSplash.png",
+                "foregroundImage": "./assets/basicIcons/iconSplash1.png",
                 "backgroundColor": "#000"
             },
-            "package": "com.piotrko64.expendflex"
+            "package": "com.piotrko64.expenseflex"
         },
         "web": {
             "favicon": "./assets/favicon.png"
