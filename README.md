@@ -27,7 +27,7 @@
 
 * [About project](#about)
 
-* [What have I learned from this project](#what-have-i-learned-from-this-project)
+
 
 <br />
 
@@ -53,11 +53,6 @@ In future I would like do more demanding mobile app.
 Of course my target is web development but I love React and I wanted check what is react native
 
 
-
-# What have I learned from this project
-
-> - How to create interesting README files
-> - Present projects well
 
 
 
