@@ -23,9 +23,9 @@
 <br />
 
 # Table of contents
-* [Instalation code](#instalation)
+* [Instalation code](#Instalation code)
 
-* [Instalation on mobile](#instalation)
+* [Instalation on mobile](#instalationmobile)
 
 * [About project](#about)
 
