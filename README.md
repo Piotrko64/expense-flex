@@ -2,13 +2,13 @@
 
 <br />
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/185703057-80d1d997-38be-42ad-8cfe-09b4af123c41.png" title="logo" alt="logo" width="200"/></p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/185703057-80d1d997-38be-42ad-8cfe-09b4af123c41.png" title="logo" alt="logo" width="150"/></p>
 
-<br />
+
 
 <p align="center"> Expense Flex is my first react-native app</p>
 
-<br />
+
 
 <div align="center">
 
