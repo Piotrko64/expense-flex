@@ -6,6 +6,7 @@ import { ExpensesSummary } from "./ExpensesSummary";
 import { GlobalColors } from "../../constants/styles";
 import { useUpdateAsyncStorage } from "../../hooks/useUpdateAsyncStorage";
 import { OneExpense } from "../../@types/OneExpense";
+import { useEffect } from "react";
 
 export function ExpensesOutput({
     expenses,
@@ -14,8 +15,11 @@ export function ExpensesOutput({
     expenses: Array<OneExpense>;
     periodExpenses: string;
 }) {
-    const [show] = useUpdateAsyncStorage();
-    console.log(show());
+    const [update, show] = useUpdateAsyncStorage();
+    useEffect(() => {
+        update();
+        console.log(show());
+    }, []);
     return (
         <View style={styles.container}>
             <LinearGradient

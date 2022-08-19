@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
     StyleSheet,
     Text,
@@ -17,7 +18,16 @@ export function Input({
     textConfig: TextInputProps;
     value?: string;
 }) {
+    const [emptyValid, setEmptyValid] = useState(false);
     const inputStyles: Array<ViewStyle> = [styles.input];
+
+    function isEmpty(valueInput: string) {
+        if (!valueInput.length) {
+            setEmptyValid(true);
+            return;
+        }
+        setEmptyValid(false);
+    }
 
     if (textConfig?.multiline) {
         inputStyles.push(styles.inputMultiline);
@@ -26,7 +36,12 @@ export function Input({
     return (
         <View style={styles.inputContainer}>
             <Text style={styles.label}>{label}</Text>
-            <TextInput {...textConfig} style={inputStyles} value={value} />
+            <TextInput
+                {...textConfig}
+                style={[inputStyles, emptyValid && styles.invalidInput]}
+                value={value}
+                onBlur={() => isEmpty(value!)}
+            />
         </View>
     );
 }
@@ -50,5 +65,8 @@ const styles = StyleSheet.create({
     inputMultiline: {
         minHeight: 100,
         textAlignVertical: "top",
+    },
+    invalidInput: {
+        backgroundColor: GlobalColors.InputError,
     },
 });

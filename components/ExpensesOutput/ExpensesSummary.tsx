@@ -1,11 +1,15 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { ExpensePeriod } from "../../@types/ExpensePeriod";
+import { OneExpense } from "../../@types/OneExpense";
 import { GlobalColors } from "../../constants/styles";
-import { IconImage } from "../UI/IconImage";
 
-export function ExpensesSummary({ expenses, periodName }: any) {
-    const expensesSummary = expenses.reduce((sum: number, expense: any) => {
-        return sum + +expense.amount;
-    }, 0);
+export function ExpensesSummary({ expenses, periodName }: ExpensePeriod) {
+    const expensesSummary = expenses.reduce(
+        (sum: number, expense: OneExpense) => {
+            return sum + +expense.amount;
+        },
+        0
+    );
 
     return (
         <View style={styles.container}>

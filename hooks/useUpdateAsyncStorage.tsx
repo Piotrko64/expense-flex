@@ -1,30 +1,43 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { expenseExample } from "../data/dummyData/expensesExample";
+import { updateExpense } from "../store/expenses";
 
 export function useUpdateAsyncStorage() {
     const stateExpenses = useSelector((state: any) => state.expensesReducer);
+    const dispatch = useDispatch();
+
     async function saveToLocalStorage() {
         try {
             await AsyncStorage.setItem(
-                "@storage_Key",
+                "@storage_expense",
                 JSON.stringify(stateExpenses)
             );
-        } catch (e) {
-            // saving error
+        } catch (error) {
+            console.log(error);
         }
     }
-    useEffect(() => {
-        console.log();
-        saveToLocalStorage();
-    }, [stateExpenses]);
 
     async function showAsyncStorage() {
-        const asyncStorage = await AsyncStorage.getItem("@storage_Key");
-        console.log(JSON.parse(asyncStorage!));
+        const asyncStorage = await AsyncStorage.getItem("@storage_expense");
+
         return asyncStorage ? JSON.parse(asyncStorage) : expenseExample;
     }
 
-    return [showAsyncStorage];
+    async function updateReducer() {
+        const asyncStorage = await AsyncStorage.getItem("@storage_expense");
+
+        dispatch(
+            updateExpense(
+                asyncStorage ? JSON.parse(asyncStorage) : expenseExample
+            )
+        );
+    }
+
+    useEffect(() => {
+        saveToLocalStorage();
+    }, [stateExpenses]);
+
+    return [updateReducer, showAsyncStorage];
 }

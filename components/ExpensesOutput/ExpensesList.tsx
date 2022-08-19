@@ -1,17 +1,22 @@
 import { useState } from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList } from "react-native";
+import { OneExpense } from "../../@types/OneExpense";
 import { ExpenseItem } from "./ExpenseItem";
 
-function renderExpenseItem(itemData: any) {
+function renderExpenseItem(itemData: { item: OneExpense }) {
     return <ExpenseItem {...itemData.item} />;
 }
 
-export function ExpensesList({ expensesList }: any) {
+export function ExpensesList({
+    expensesList,
+}: {
+    expensesList: Array<OneExpense>;
+}) {
     return (
         <FlatList
             data={expensesList}
             renderItem={renderExpenseItem}
-            keyExtractor={(item) => item.id}
+            keyExtractor={(item) => item.id!}
         />
     );
 }

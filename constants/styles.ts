@@ -15,4 +15,5 @@ export const GlobalColors = {
     gray500: "#39324a",
     gray700: "#221c30",
     forAndroidRipple: "#6a6a6a66",
+    InputError: "#ff72724d",
 };
