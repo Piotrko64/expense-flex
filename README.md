@@ -6,7 +6,7 @@
 
 
 
-<p align="center"> Expense Flex is my first react-native app</p>
+<p align="center"> Expense Flex is my first react-native app (for android) </p>
 
 
 
@@ -23,7 +23,9 @@
 <br />
 
 # Table of contents
-* [Instalation](#instalation)
+* [Instalation code](#instalation code)
+
+* [Instalation on mobile](#instalation mobile)
 
 * [About project](#about)
 
@@ -31,11 +33,15 @@
 
 <br />
 
-# Instalation
+# Instalation code
 - Remember to install expo CLI
 - Download files by **git clone _repository-name_**
 - Use **yarn**
 - Use **yarn start**
+
+# Instalation mobile app for your adroid device
+
+[Click this link and install app on your mobile](https://expo.dev/accounts/piotrko64/projects/expense-flex/builds/34ac23cc-f58a-4bc0-8d24-4acdf7d126ca)
 
 
 <br />
