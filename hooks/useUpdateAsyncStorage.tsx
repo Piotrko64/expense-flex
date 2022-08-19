@@ -10,27 +10,54 @@ export async function useUpdateAsyncStorage() {
     const stateExpenses = useSelector((state: any) => state.expensesReducer);
     const dispatch = useDispatch();
 
+    // async function saveToLocalStorage() {
+    //     const asyncStorage = await AsyncStorage.getItem("@storage_expense");
+    //     if (asyncStorage) {
+    //         try {
+    //             await AsyncStorage.setItem(
+    //                 "@storage_expense",
+    //                 JSON.stringify(stateExpenses)
+    //             );
+    //         } catch (error) {
+    //             console.log(error);
+    //         }
+    //     }
+    // }
+
+    // async function updateReducer() {
+    //     const asyncStorage = await AsyncStorage.getItem("@storage_expense");
+
+    //     dispatch(
+    //         updateExpense(
+    //             asyncStorage ? JSON.parse(asyncStorage) : expenseExample
+    //         )
+    //     );
+
+    // }
+
     async function updateStateFromStorage() {
         const asyncStorage = await AsyncStorage.getItem("@storage_expense");
-
+        console.log(asyncStorage);
         if (asyncStorage) {
             dispatch(updateAll(JSON.parse(asyncStorage)));
-
+            console.log("init");
             setIsStartUpdate(true);
         }
     }
 
     async function updateStorage() {
-        if (isStartUpdate) {
-            try {
-                await AsyncStorage.setItem(
-                    "@storage_expense",
-                    JSON.stringify(stateExpenses)
-                );
-            } catch (error) {
-                console.log(error);
-            }
+        const asyncStorage = await AsyncStorage.getItem("@storage_expense");
+
+        try {
+            await AsyncStorage.setItem(
+                "@storage_expense",
+                JSON.stringify(stateExpenses)
+            );
+        } catch (error) {
+            console.log(error);
         }
+
+        console.log("storage", asyncStorage);
     }
 
     useEffect(() => {
