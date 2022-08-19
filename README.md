@@ -23,9 +23,9 @@
 <br />
 
 # Table of contents
-* [Instalation code](#Instalation code)
+* [Instalation code](#Instalation-code)
 
-* [Instalation on mobile](#instalationmobile)
+* [Instalation on mobile](#Instalation-mobile-app-for-your-adroid-device)
 
 * [About project](#about)
 
