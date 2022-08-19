@@ -12,7 +12,7 @@ import { IconImage } from "./components/UI/IconImage";
 import { Provider, useDispatch } from "react-redux";
 import { store } from "./store/store";
 import { ImageBackground, StyleSheet } from "react-native";
-import { useUpdateAsyncStorage } from "./hooks/useAsyncStorage";
+import { useUpdateAsyncStorage } from "./hooks/useUpdateAsyncStorage";
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 import { useEffect } from "react";
 import { updateExpense } from "./store/expenses";

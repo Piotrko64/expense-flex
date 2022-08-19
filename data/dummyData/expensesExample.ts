@@ -11,7 +11,7 @@ export const expenseExample: Array<OneExpense> = [
         id: "el1",
         description: "Be happy",
         amount: "49.99",
-        date: "2022-08-16",
+        date: "2022-08-22T08:37:33.109Z",
     },
     {
         id: "el4s",

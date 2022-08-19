@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { ExpensesList } from "./ExpensesList";
 import { ExpensesSummary } from "./ExpensesSummary";
 import { GlobalColors } from "../../constants/styles";
-import { useUpdateAsyncStorage } from "../../hooks/useAsyncStorage";
+import { useUpdateAsyncStorage } from "../../hooks/useUpdateAsyncStorage";
 import { OneExpense } from "../../@types/OneExpense";
 
 export function ExpensesOutput({
@@ -14,7 +14,8 @@ export function ExpensesOutput({
     expenses: Array<OneExpense>;
     periodExpenses: string;
 }) {
-    useUpdateAsyncStorage();
+    const [show] = useUpdateAsyncStorage();
+    console.log(show());
     return (
         <View style={styles.container}>
             <LinearGradient

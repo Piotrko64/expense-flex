@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { Alert, ScrollView, StyleSheet, View } from "react-native";
 import { useDispatch } from "react-redux";
 import { OneExpense } from "../@types/OneExpense";
 import { ExpenseForm } from "../components/ExpensesOutput/ManageExpense/ExpenseForm";
@@ -9,6 +9,7 @@ import { expenseExample } from "../data/dummyData/expensesExample";
 import { useAlertDelete } from "../hooks/useAlertDelete";
 import { addExpense, updateExpense } from "../store/expenses";
 import { findExpenseById } from "../util/findExpenseById";
+import { validForm } from "../util/validForm";
 
 export function ManageExpense({ route, navigation }: any) {
     const editedExpenseId = route.params?.expenseId;
@@ -42,12 +43,16 @@ export function ManageExpense({ route, navigation }: any) {
             description,
             amount,
         };
-
+        if (!validForm(description, amount)) {
+            Alert.alert("Invalid inputs", "Please check your input values");
+            return;
+        }
         if (isEditing) {
             dispatch(updateExpense(objectData));
         } else {
             dispatch(addExpense(objectData));
         }
+        navigation.goBack();
     }
 
     return (

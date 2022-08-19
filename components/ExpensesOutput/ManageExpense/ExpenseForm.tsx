@@ -87,6 +87,7 @@ export function ExpenseForm({
                 textConfig={{
                     multiline: true,
                     autoCorrect: false,
+                    placeholder: "Name Expense",
                     onChangeText: (text) =>
                         setDataInputHandler("description", text),
                 }}
@@ -97,6 +98,7 @@ export function ExpenseForm({
                 textConfig={{
                     keyboardType: "decimal-pad",
                     onChangeText: (text) => setDataInputHandler("amount", text),
+                    placeholder: "Give the number",
                 }}
                 value={inputsValue.amount}
             />
