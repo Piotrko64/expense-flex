@@ -2,7 +2,7 @@
 
 <br />
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/185703057-80d1d997-38be-42ad-8cfe-09b4af123c41.png" title="logo" alt="logo" width="300"/></p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/185703057-80d1d997-38be-42ad-8cfe-09b4af123c41.png" title="logo" alt="logo" width="200"/></p>
 
 <br />
 
@@ -42,13 +42,13 @@
 
 # About 
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/185704743-491b3270-2f7d-4e3d-8d92-70e03c355093.jpg"/><p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/185704743-491b3270-2f7d-4e3d-8d92-70e03c355093.jpg" width="280"/><p>
 
 I wanted check is creating mobile app  for me will be good experience. 
 Well, I think that create simple app like this is very easy.
 In future I would like do more demanding mobile app.
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/185704702-67cca491-752b-4ca5-a172-f26173a0569f.jpg"/><p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/185704702-67cca491-752b-4ca5-a172-f26173a0569f.jpg" width="280"/><p>
 
 Of course my target is web development but I love React and I wanted check what is react native
 
