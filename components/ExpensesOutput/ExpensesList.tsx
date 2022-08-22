@@ -6,6 +6,8 @@ import { ExpensesReducerInterface } from "../../@types/_reducers/ExpensesReducer
 import { SettingsInterface } from "../../@types/_reducers/SettingsInterface";
 import { findTheBiggestAmountExpense } from "../../util/markExpenses/findTheBiggesAmountExpense";
 import { findTheSmallestAmountExpense } from "../../util/markExpenses/findTheSmallestAmountExpense";
+import { sortExpensesByDate } from "../../util/sorting/sortExpenseByDate";
+import { sortExpensesByAmount } from "../../util/sorting/sortExpensesByAmount";
 import { ExpenseItem } from "./ExpenseItem";
 
 function RenderExpenseItem(itemData: {
@@ -38,10 +40,17 @@ export function ExpensesList({
         (state: SettingsInterface) =>
             state.settingsReducer.showTheSmallestExpense
     );
+    const IsSettingSortByAmount = useSelector(
+        (state: SettingsInterface) => state.settingsReducer.sortByAmountExpense
+    );
+
+    const sortExpenses = IsSettingSortByAmount
+        ? sortExpensesByAmount(expensesList)
+        : sortExpensesByDate(expensesList);
 
     return (
         <FlatList
-            data={expensesList}
+            data={sortExpenses}
             renderItem={({ item }) => (
                 <RenderExpenseItem
                     item={item}
