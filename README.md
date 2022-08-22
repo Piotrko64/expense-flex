@@ -16,7 +16,8 @@
 <img src="https://user-images.githubusercontent.com/77500425/161312615-f3961568-28bb-48fa-9d95-93ecd61337b3.png" alt="react"  height="50" align="center"/>
 <img src="https://user-images.githubusercontent.com/77500425/170885815-0f0c6abd-6470-4654-bdc8-d50235fc75c4.png" alt="Redux" height="50"  align="center" title="Redux"/>
 <img src="https://user-images.githubusercontent.com/77500425/185703352-050d1a01-1220-4bd5-8d54-664d5af46bad.png" alt="Expo"  height="50" align="center"/>
-<img src="https://user-images.githubusercontent.com/77500425/185703524-d6385ebf-3401-4061-8167-2bc63c13727d.png" alt="Expo"  height="50" align="center"/>
+<img src="https://user-images.githubusercontent.com/77500425/185703524-d6385ebf-3401-4061-8167-2bc63c13727d.png" alt="React NAtive"  height="50" align="center"/>
+<img src="https://user-images.githubusercontent.com/77500425/186013478-fdf4ea21-8745-4c5d-9591-35e45e39c66f.png" title="i18n"  height="50" align="center"/>
 
 </div>
 
