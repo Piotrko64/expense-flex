@@ -1,30 +1,37 @@
 import { useLayoutEffect } from "react";
+import { useTranslation } from "react-i18next";
+import "../assets/i18n/i18n";
 import { Alert, ScrollView, StyleSheet, View } from "react-native";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { OneExpense } from "../@types/OneExpense";
+import { ExpensesReducerInterface } from "../@types/_reducers/ExpensesReducerInterface";
 import { ExpenseForm } from "../components/ExpensesOutput/ManageExpense/ExpenseForm";
+import { MoreExpensiveInformation } from "../components/MoreExpensiveInformation/MoreExpensiveInformation";
 import { IconButton } from "../components/UI/IconButton";
 import { GlobalColors } from "../constants/styles";
-import { expenseExample } from "../data/dummyData/expensesExample";
 import { useAlertDelete } from "../hooks/useAlertDelete";
 import { addExpense, updateExpense } from "../store/expenses";
 import { findExpenseById } from "../util/findExpenseById";
 import { validForm } from "../util/validForm";
 
 export function ManageExpense({ route, navigation }: any) {
+    const { t, i18n } = useTranslation();
     const editedExpenseId = route.params?.expenseId;
     const isEditing = !!editedExpenseId;
+    const allExpenses = useSelector(
+        (state: ExpensesReducerInterface) => state.expensesReducer
+    );
 
     const descriptionExpense =
-        findExpenseById(expenseExample, editedExpenseId)?.description ||
-        "Edit Expense";
+        findExpenseById(allExpenses, editedExpenseId)?.description || "edit";
+    const dateExpense = findExpenseById(allExpenses, editedExpenseId)?.date;
 
     const dispatch = useDispatch();
     const [showAlert] = useAlertDelete(descriptionExpense, editedExpenseId);
 
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: isEditing ? `${descriptionExpense}` : "Add Expense",
+            title: isEditing ? `${descriptionExpense}` : t("hello"),
         });
     }, [navigation, isEditing]);
 
@@ -58,6 +65,7 @@ export function ManageExpense({ route, navigation }: any) {
     return (
         <View style={styles.backgroundContainer}>
             <ScrollView contentContainerStyle={styles.container}>
+                {isEditing && <MoreExpensiveInformation date={dateExpense} />}
                 <ExpenseForm
                     id={editedExpenseId}
                     isEditing={isEditing}
