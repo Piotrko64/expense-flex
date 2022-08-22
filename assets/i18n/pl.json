@@ -1,6 +1,22 @@
 {
     "translation": {
-        "hello": "PLdd",
-        "this line is translated": "This line is translated"
+        "recentExp": "Ostatnie wydatki",
+        "last7": "Ostatnie 7 dni",
+        "last30": "Ostatnie 14 dni",
+        "last90": "Ostatnie 90 dni",
+        "lastYear": "W ciągu roku",
+        "total": "Razem",
+        "allExp": "Wszystkie Wydatki",
+        "addExp": "Nowy Wydatek",
+        "cancel": "Zamknij",
+        "update": "Zapisz",
+        "add": "Dodaj",
+        "name": "Nazwa",
+        "amount": "Wielkość wydatku",
+        "plchName": "Podaj Nazwe Wydatku",
+        "plchAmount": "Podaj wielkość",
+        "last": "Ostatnie",
+        "all": "Wszystko",
+        "graphs": "Wykresy"
     }
 }

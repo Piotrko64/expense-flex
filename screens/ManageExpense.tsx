@@ -15,7 +15,7 @@ import { findExpenseById } from "../util/findExpenseById";
 import { validForm } from "../util/validForm";
 
 export function ManageExpense({ route, navigation }: any) {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const editedExpenseId = route.params?.expenseId;
     const isEditing = !!editedExpenseId;
     const allExpenses = useSelector(
@@ -31,7 +31,7 @@ export function ManageExpense({ route, navigation }: any) {
 
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: isEditing ? `${descriptionExpense}` : t("hello"),
+            title: isEditing ? `${descriptionExpense}` : t("addExp"),
         });
     }, [navigation, isEditing]);
 

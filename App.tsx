@@ -7,23 +7,22 @@ import { RecentExpenses } from "./screens/RecentExpenses";
 import { AllExpenses } from "./screens/AllExpenses";
 import { GlobalColors } from "./constants/styles";
 import { Ionicons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 import { IconButton } from "./components/UI/IconButton";
 import { IconImage } from "./components/UI/IconImage";
-import { Provider, useDispatch } from "react-redux";
+import { Provider } from "react-redux";
 import { store } from "./store/store";
-import { ImageBackground, StyleSheet } from "react-native";
-import { useUpdateAsyncStorage } from "./hooks/useUpdateAsyncStorage";
-import { useAsyncStorage } from "@react-native-async-storage/async-storage";
-import { useEffect } from "react";
-import { updateExpense } from "./store/expenses";
+import { useTranslation } from "react-i18next";
+import { GraphScreen } from "./screens/GraphScreen";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
 
 function ExpensesOverview() {
+    const { t } = useTranslation();
     return (
         <BottomTabs.Navigator
-            screenOptions={({ navigation }) => ({
+            screenOptions={({ navigation, route }) => ({
                 headerStyle: {
                     backgroundColor: GlobalColors.primary500,
                 },
@@ -60,8 +59,8 @@ function ExpensesOverview() {
                 name="RecentExpenses"
                 component={RecentExpenses}
                 options={{
-                    title: "Recent Expenses",
-                    tabBarLabel: "Recent",
+                    title: t("recentExp"),
+                    tabBarLabel: t("last"),
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons name="hourglass" size={size} color={color} />
                     ),
@@ -71,10 +70,21 @@ function ExpensesOverview() {
                 name="AllExpenses"
                 component={AllExpenses}
                 options={{
-                    title: "All Expenses",
-                    tabBarLabel: "All",
+                    title: t("allExp"),
+                    tabBarLabel: t("all"),
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons name="calendar" size={size} color={color} />
+                    ),
+                }}
+            />
+            <BottomTabs.Screen
+                name="Graphs"
+                component={GraphScreen}
+                options={{
+                    title: t("graphs"),
+                    tabBarLabel: t("graphs"),
+                    tabBarIcon: ({ color, size }) => (
+                        <Entypo name="bar-graph" size={size} color={color} />
                     ),
                 }}
             />
@@ -117,12 +127,3 @@ export default function App() {
         </>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    backgroundImage: {
-        opacity: 0.95,
-    },
-});

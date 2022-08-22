@@ -32,7 +32,7 @@ export function ExpenseItem({ id, description, date, amount }: any) {
                         {description}
                     </Text>
                     <Text style={[styles.textBase]}>
-                        {getFormattedDate(date)}
+                        {getFormattedDate(date, true)}
                     </Text>
                 </View>
                 <View style={styles.priceContainer}>

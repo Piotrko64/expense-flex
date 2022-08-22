@@ -1,6 +1,22 @@
 {
     "translation": {
-        "hello": "Helldo",
-        "this line is translated": "This line is translated"
+        "recentExp": "Recent Expenses",
+        "last7": "Last 7 days",
+        "last30": "Last 14 days",
+        "last90": "Last 90 days",
+        "lastYear": "Last Year",
+        "total": "Total",
+        "allExp": "All Expenses",
+        "addExp": "Add Expense",
+        "cancel": "Cancel",
+        "update": "Update",
+        "add": "Add",
+        "name": "Name",
+        "amount": "Amount",
+        "plchName": "Name Expense",
+        "plchAmount": "Give The Number",
+        "last": "Last",
+        "all": "All",
+        "graphs": "Graphs"
     }
 }

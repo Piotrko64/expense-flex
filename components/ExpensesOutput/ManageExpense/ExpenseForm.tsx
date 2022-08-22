@@ -10,6 +10,7 @@ import { ExpenseData } from "../../../@types/ExpenseData";
 import { CustomButton } from "../../UI/CustomButton";
 import { OneExpense } from "../../../@types/OneExpense";
 import { ExpensesReducerInterface } from "../../../@types/_reducers/ExpensesReducerInterface";
+import { t } from "i18next";
 
 export function ExpenseForm({
     id,
@@ -63,7 +64,7 @@ export function ExpenseForm({
             >
                 <View style={styles.dateButton}>
                     <Text style={styles.textButton}>
-                        {getFormattedDate(inputsValue.date.toISOString())}
+                        {getFormattedDate(inputsValue.date.toISOString(), true)}
                     </Text>
                 </View>
             </Pressable>
@@ -83,31 +84,31 @@ export function ExpenseForm({
             )}
 
             <Input
-                label="Name"
+                label={t("name")}
                 textConfig={{
                     multiline: true,
                     autoCorrect: false,
-                    placeholder: "Name Expense",
+                    placeholder: t("plchName"),
                     onChangeText: (text) =>
                         setDataInputHandler("description", text),
                 }}
                 value={inputsValue.description}
             />
             <Input
-                label="Amount"
+                label={t("amount")}
                 textConfig={{
                     keyboardType: "decimal-pad",
                     onChangeText: (text) => setDataInputHandler("amount", text),
-                    placeholder: "Give the number",
+                    placeholder: t("plchAmount"),
                 }}
                 value={inputsValue.amount}
             />
             <View style={styles.buttonsContainer}>
                 <CustomButton mode="flat" onPress={cancelModalHandler}>
-                    Cancel
+                    {t("cancel")}
                 </CustomButton>
                 <CustomButton onPress={() => confirmHandler(inputsValue)}>
-                    {isEditing ? "Update" : "Add"}
+                    {isEditing ? t("update") : t("add")}
                 </CustomButton>
             </View>
         </View>
