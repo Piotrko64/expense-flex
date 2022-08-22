@@ -17,6 +17,12 @@
         "plchAmount": "Podaj wielkość",
         "last": "Ostatnie",
         "all": "Wszystko",
-        "graphs": "Wykresy"
+        "graphs": "Wykresy",
+        "currency": "zł",
+        "moreDetails": "Więcej szczegółów",
+        "edit": "Edycja",
+        "thatDay": "Tego samego dnia",
+        "thatMonth": "Tego samego miesiąca",
+        "thatYear": "Tego samego Roku"
     }
 }

@@ -17,6 +17,12 @@
         "plchAmount": "Give The Number",
         "last": "Last",
         "all": "All",
-        "graphs": "Graphs"
+        "graphs": "Graphs",
+        "currency": "$",
+        "moreDetails": "More Details",
+        "edit": "Edit Expensive",
+        "thatDay": "That Same Day",
+        "thatMonth": "That Same Month",
+        "thatYear": "That Same Year"
     }
 }
