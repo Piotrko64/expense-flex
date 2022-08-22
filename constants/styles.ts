@@ -6,6 +6,7 @@ export const GlobalColors = {
     primary500: "#272c3c",
     primary500White: "#dedee0",
     primary700: "#222d4e",
+    primary700Black: "#191e2b",
     primary700White: "#b7bfdd",
     primary800: "#200364",
     accent500: "#FFE936",

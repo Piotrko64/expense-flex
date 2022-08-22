@@ -14,6 +14,7 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 import { useTranslation } from "react-i18next";
 import { GraphScreen } from "./screens/GraphScreen";
+import { SettingsScreen } from "./screens/SettingsScreen";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -22,18 +23,18 @@ function ExpensesOverview() {
     const { t } = useTranslation();
     return (
         <BottomTabs.Navigator
-            screenOptions={({ navigation, route }) => ({
+            screenOptions={({ navigation }) => ({
                 headerStyle: {
                     backgroundColor: GlobalColors.primary500,
                 },
                 headerTintColor: "white",
                 tabBarLabelStyle: {
-                    fontSize: 14,
-                    padding: 1,
+                    fontSize: 13,
                 },
                 tabBarStyle: {
                     backgroundColor: GlobalColors.primary500,
                     minHeight: 55,
+                    borderTopWidth: 0,
                 },
                 tabBarActiveTintColor: GlobalColors.accent700,
                 tabBarInactiveTintColor: GlobalColors.primary100,
@@ -41,7 +42,7 @@ function ExpensesOverview() {
                     return (
                         <IconButton
                             icon="add"
-                            size={28}
+                            size={32}
                             color={tintColor}
                             onPress={() => {
                                 navigation.navigate("ManageExpense");
@@ -85,6 +86,21 @@ function ExpensesOverview() {
                     tabBarLabel: t("graphs"),
                     tabBarIcon: ({ color, size }) => (
                         <Entypo name="bar-graph" size={size} color={color} />
+                    ),
+                }}
+            />
+            <BottomTabs.Screen
+                name="Settings"
+                component={SettingsScreen}
+                options={{
+                    title: t("settings"),
+                    tabBarLabel: t("settings"),
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons
+                            name="settings-sharp"
+                            size={size}
+                            color={color}
+                        />
                     ),
                 }}
             />

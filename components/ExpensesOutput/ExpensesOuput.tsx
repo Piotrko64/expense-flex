@@ -6,7 +6,6 @@ import { ExpensesSummary } from "./ExpensesSummary";
 import { GlobalColors } from "../../constants/styles";
 import { useUpdateAsyncStorage } from "../../hooks/useUpdateAsyncStorage";
 import { OneExpense } from "../../@types/OneExpense";
-import { useEffect } from "react";
 
 export function ExpensesOutput({
     expenses,

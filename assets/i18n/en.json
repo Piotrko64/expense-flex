@@ -23,6 +23,10 @@
         "edit": "Edit Expensive",
         "thatDay": "That Same Day",
         "thatMonth": "That Same Month",
-        "thatYear": "That Same Year"
+        "thatYear": "That Same Year",
+        "settings": "Settings",
+        "showBiggestExpense": "Mark in red the biggest expenses from the current list",
+        "showSmallestExpense": "Mark in green the smallest expenses from the current list",
+        "sortByAmounts": "Sort by expense size"
     }
 }

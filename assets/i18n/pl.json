@@ -23,6 +23,10 @@
         "edit": "Edycja",
         "thatDay": "Tego samego dnia",
         "thatMonth": "Tego samego miesiąca",
-        "thatYear": "Tego samego Roku"
+        "thatYear": "Tego samego Roku",
+        "settings": "Ustawienia",
+        "showBiggestExpense": "Zaznacz na czerwono największe wydatki z obecnej listy",
+        "showSmallestExpense": "Zaznacz na zielono najmniejsze wydatki z obecnej listy",
+        "sortByAmounts": "Sortuj względem wielkości wydatków"
     }
 }
