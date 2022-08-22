@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { Input } from "./Input";
-import { getFormattedDate } from "../../../util/getFormatDate";
+import { getFormattedDate } from "../../../util/datesFunction/getFormatDate";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { useEffect, useState } from "react";
 import { GlobalColors } from "../../../constants/styles";
@@ -58,17 +58,6 @@ export function ExpenseForm({
 
     return (
         <View>
-            <Pressable
-                onPress={() => setOpenDataPicker(true)}
-                style={({ pressed }) => pressed && styles.pressed}
-            >
-                <View style={styles.dateButton}>
-                    <Text style={styles.textButton}>
-                        {getFormattedDate(inputsValue.date.toISOString(), true)}
-                    </Text>
-                </View>
-            </Pressable>
-
             {openDataPicker && (
                 <DateTimePicker
                     value={inputsValue.date}
@@ -103,6 +92,16 @@ export function ExpenseForm({
                 }}
                 value={inputsValue.amount}
             />
+            <Pressable
+                onPress={() => setOpenDataPicker(true)}
+                style={({ pressed }) => pressed && styles.pressed}
+            >
+                <View style={styles.dateButton}>
+                    <Text style={styles.textButton}>
+                        {getFormattedDate(inputsValue.date.toISOString(), true)}
+                    </Text>
+                </View>
+            </Pressable>
             <View style={styles.buttonsContainer}>
                 <CustomButton mode="flat" onPress={cancelModalHandler}>
                     {t("cancel")}
@@ -122,14 +121,15 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        marginTop: 40,
+        marginTop: 30,
     },
     dateButton: {
-        backgroundColor: GlobalColors.primary700,
+        backgroundColor: GlobalColors.primary500,
         justifyContent: "center",
         alignItems: "center",
         overflow: "hidden",
-        marginBottom: 15,
+        marginTop: 15,
+        marginBottom: 5,
         borderRadius: 4,
     },
     textButton: {
@@ -137,6 +137,6 @@ const styles = StyleSheet.create({
         textAlign: "center",
 
         padding: 10,
-        color: GlobalColors.accent700,
+        color: "white",
     },
 });

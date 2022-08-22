@@ -98,7 +98,8 @@ const styles = StyleSheet.create({
     },
 
     container: {
-        padding: 24,
+        paddingHorizontal: 20,
+        paddingVertical: 14,
     },
     backgroundContainer: {
         backgroundColor: GlobalColors.primary500White,

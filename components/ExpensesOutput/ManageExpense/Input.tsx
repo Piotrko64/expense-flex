@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         color: GlobalColors.primary700,
     },
     inputMultiline: {
-        minHeight: 100,
+        minHeight: 80,
         textAlignVertical: "top",
     },
     invalidInput: {

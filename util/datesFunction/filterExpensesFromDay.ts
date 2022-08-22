@@ -2,18 +2,12 @@ import { OneExpense } from "../../@types/OneExpense";
 
 export function filterExpensesFromDay(
     listExpenses: Array<OneExpense>,
-    year: number,
-    month: number,
-    day: number
+    date: Date
 ) {
     const listCorrectExpenses = listExpenses.filter(
-        (date) =>
-            year &&
-            new Date(date.date).getFullYear() === year &&
-            month &&
-            new Date(date.date).getMonth() === month &&
-            day &&
-            new Date(date.date).getDate() === day
+        (itemDate) =>
+            new Date(date).toLocaleDateString() ===
+            new Date(itemDate.date).toLocaleDateString()
     );
 
     return listCorrectExpenses.reduce((sum: number, expense: OneExpense) => {

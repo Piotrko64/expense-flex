@@ -12,6 +12,7 @@ export function filterExpensesByMonthAndYear(
             month &&
             new Date(date.date).getMonth() === month
     );
+
     return listCorrectExpenses.reduce((sum: number, expense: OneExpense) => {
         return sum + +expense.amount;
     }, 0);
