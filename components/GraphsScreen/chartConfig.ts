@@ -5,6 +5,6 @@ export const chartConfig = {
     backgroundGradientToOpacity: 0.7,
     color: (opacity = 1) => `rgba(154, 200, 255, ${opacity})`,
     strokeWidth: 6,
-    barPercentage: 0.75,
+    barPercentage: 0.45,
     useShadowColorFromDataset: false,
 };
