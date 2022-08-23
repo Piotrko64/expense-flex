@@ -11,6 +11,7 @@ import { CustomButton } from "../../UI/CustomButton";
 import { OneExpense } from "../../../@types/OneExpense";
 import { ExpensesReducerInterface } from "../../../@types/_reducers/ExpensesReducerInterface";
 import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 export function ExpenseForm({
     id,
@@ -25,11 +26,12 @@ export function ExpenseForm({
 }) {
     const [openDataPicker, setOpenDataPicker] = useState(false);
     const [inputsValue, setInputsValue] = useState({
+        id: "",
         date: new Date(),
         amount: "",
         description: "",
     });
-
+    const { i18n } = useTranslation();
     const allExpenses = useSelector(
         (state: ExpensesReducerInterface) => state.expensesReducer
     );
@@ -97,7 +99,10 @@ export function ExpenseForm({
             >
                 <View style={styles.dateButton}>
                     <Text style={styles.textButton}>
-                        {getFormattedDate(inputsValue.date.toISOString(), true)}
+                        {getFormattedDate(
+                            inputsValue.date.toISOString(),
+                            i18n.language === "pl"
+                        )}
                     </Text>
                 </View>
             </Pressable>

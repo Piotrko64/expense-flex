@@ -3,6 +3,8 @@ import { useNavigation } from "@react-navigation/native";
 import { GlobalColors } from "../../constants/styles";
 import { getFormattedDate } from "../../util/datesFunction/getFormatDate";
 import { useAlertDelete } from "../../hooks/useAlertDelete";
+import { ExpenseItemInterface } from "../../@types/ExpenseItemInterface";
+import { useTranslation } from "react-i18next";
 
 export function ExpenseItem({
     id,
@@ -11,9 +13,10 @@ export function ExpenseItem({
     amount,
     isSmallest,
     isBiggest,
-}: any) {
+}: ExpenseItemInterface) {
     const navigation = useNavigation<any>();
     const [showAlert] = useAlertDelete(description, id);
+    const { i18n } = useTranslation();
 
     function expensePressHandler() {
         navigation.navigate("ManageExpense", {
@@ -38,7 +41,10 @@ export function ExpenseItem({
                         {description}
                     </Text>
                     <Text style={[styles.textBase]}>
-                        {getFormattedDate(date, true)}
+                        {getFormattedDate(
+                            date.toLocaleString(),
+                            i18n.language === "pl"
+                        )}
                     </Text>
                 </View>
                 <View style={styles.priceContainer}>

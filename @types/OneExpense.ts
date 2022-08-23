@@ -1,5 +1,5 @@
 export interface OneExpense {
-    id?: string;
+    id: string;
     date: string | Date;
     description: string;
     amount: string;
