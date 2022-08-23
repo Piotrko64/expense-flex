@@ -11,12 +11,11 @@ import {
     getFormattedEarlierDay,
 } from "../util/datesFunction/getPreviousDay";
 
-export function useDataToGraph() {
+export function useDataToGraph(mode: ModesGraph) {
     const Expenses = useSelector(
         (state: ExpensesReducerInterface) => state.expensesReducer
     );
 
-    const [mode, setMode] = useState<ModesGraph>("days");
     const [labels, setLabels] = useState<Array<string>>([]);
     const [dataLabel, setDataLabel] = useState<Array<number>>([]);
 

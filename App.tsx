@@ -15,12 +15,14 @@ import { store } from "./store/store";
 import { useTranslation } from "react-i18next";
 import { GraphScreen } from "./screens/GraphScreen";
 import { SettingsScreen } from "./screens/SettingsScreen";
+import { useLanguageSetting } from "./hooks/useLanguageSetting";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
 
 function ExpensesOverview() {
     const { t } = useTranslation();
+    useLanguageSetting();
     return (
         <BottomTabs.Navigator
             screenOptions={({ navigation }) => ({

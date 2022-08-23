@@ -8,6 +8,7 @@ export function SelectOneInput({ onPress, arrayData, chooseValue }: any) {
             <View style={styles.row}>
                 {arrayData.map((info: DataToOneSelect) => (
                     <View
+                        key={info.value}
                         style={[
                             styles.block,
                             chooseValue === info.value && styles.chooseBlock,

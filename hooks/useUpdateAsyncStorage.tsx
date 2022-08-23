@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { updateAll } from "../store/expenses";
@@ -27,10 +27,10 @@ export async function useUpdateAsyncStorage() {
         }
     }
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         updateStateFromStorage();
     }, []);
-    useEffect(() => {
+    useLayoutEffect(() => {
         updateStorage();
     }, [stateExpenses]);
 }

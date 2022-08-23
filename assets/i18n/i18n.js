@@ -5,8 +5,8 @@ import pl from "./pl.json";
 
 i18n.use(initReactI18next).init({
     compatibilityJSON: "v3",
-    lng: "pl",
-    fallbackLng: "pl",
+    lng: "en",
+    fallbackLng: "en",
     resources: {
         en,
         pl,

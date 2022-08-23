@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { CustomSwitch } from "../components/UI/CustomSwitch";
 import { GlobalColors } from "../constants/styles";
 import { useTranslation } from "react-i18next";
@@ -45,6 +45,7 @@ export function SettingsScreen() {
     }
 
     const dispatch = useDispatch();
+
     function handleNumberInput(num: number) {
         dispatch(setDaysInRecentScreen(Math.abs(num)));
     }
@@ -67,7 +68,7 @@ export function SettingsScreen() {
                 onChange={changeSort}
             />
             <NumberInput
-                describe="saddsaadsdsads sada sa "
+                describe={t("numberDays")}
                 value={numberInputValue}
                 onChange={handleNumberInput}
             />

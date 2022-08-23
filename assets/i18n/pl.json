@@ -31,6 +31,7 @@
         "last": "Ostatnie",
         "days": "dni",
         "months": "miesiące",
-        "years": "lata"
+        "years": "lata",
+        "numberDays": "Liczba dni pokazanych w sekcji 'Ostatnie' "
     }
 }

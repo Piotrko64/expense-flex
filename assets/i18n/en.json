@@ -28,9 +28,10 @@
         "showBiggestExpense": "Mark in red the biggest expenses from the current list",
         "showSmallestExpense": "Mark in green the smallest expenses from the current list",
         "sortByAmounts": "Sort by expense size",
-        "last": "Last",
+
         "days": "days",
         "months": "months",
-        "years": "years"
+        "years": "years",
+        "numberDays": "Number of days shown in the 'Recent' section"
     }
 }
