@@ -1,9 +1,11 @@
+import { useTranslation } from "react-i18next";
 import { StyleSheet, Text, View } from "react-native";
 import { ExpensePeriod } from "../../@types/ExpensePeriod";
 import { OneExpense } from "../../@types/OneExpense";
 import { GlobalColors } from "../../constants/styles";
 
 export function ExpensesSummary({ expenses, periodName }: ExpensePeriod) {
+    const { t } = useTranslation();
     const expensesSummary = expenses.reduce(
         (sum: number, expense: OneExpense) => {
             return sum + +expense.amount;
@@ -14,7 +16,9 @@ export function ExpensesSummary({ expenses, periodName }: ExpensePeriod) {
     return (
         <View style={styles.container}>
             <Text style={styles.period}>{periodName}</Text>
-            <Text style={styles.sum}>${expensesSummary.toFixed(2)}</Text>
+            <Text style={styles.sum}>
+                {expensesSummary.toFixed(2)} {t("currency")}
+            </Text>
         </View>
     );
 }

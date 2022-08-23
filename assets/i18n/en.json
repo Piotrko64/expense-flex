@@ -32,6 +32,8 @@
         "days": "days",
         "months": "months",
         "years": "years",
-        "numberDays": "Number of days shown in the 'Recent' section"
+        "numberDays": "Number of days shown in the 'Recent' section",
+        "invalidInputs": "Invalid Inputs",
+        "plsCheck": "Please check your input values"
     }
 }

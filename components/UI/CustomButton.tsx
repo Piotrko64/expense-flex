@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { GlobalColors } from "../../constants/styles";
 
 export function CustomButton({
@@ -8,7 +8,7 @@ export function CustomButton({
 }: {
     children: JSX.Element;
     onPress: () => void;
-    mode: string;
+    mode?: string;
 }) {
     return (
         <View style={styles.flexContainer}>

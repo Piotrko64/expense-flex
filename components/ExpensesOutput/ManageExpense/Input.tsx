@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {
+    ScrollView,
     StyleSheet,
     Text,
     TextInput,

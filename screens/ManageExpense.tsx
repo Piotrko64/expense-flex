@@ -51,7 +51,7 @@ export function ManageExpense({ route, navigation }: any) {
             amount,
         };
         if (!validForm(description, amount)) {
-            Alert.alert("Invalid inputs", "Please check your input values");
+            Alert.alert(t("invalidInputs"), t("plsCheck"));
             return;
         }
         if (isEditing) {

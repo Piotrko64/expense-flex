@@ -33,6 +33,8 @@
         "months": "miesiące",
         "years": "lata",
         "noExpenses": "Brak Wydatków",
-        "numberDays": "Liczba dni pokazanych w sekcji 'Ostatnie' "
+        "numberDays": "Liczba dni pokazanych w sekcji 'Ostatnie' ",
+        "invalidInputs": "Nie poprawne dane",
+        "plsCheck": "Sprawdź wszystkie pola"
     }
 }
