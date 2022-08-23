@@ -15,6 +15,8 @@ export function useSettingsFromStorage() {
     const dispatch = useDispatch();
 
     async function saveSettings() {
+        const settingsStorage = await AsyncStorage.getItem("settings");
+        console.log(settingsStorage);
         await AsyncStorage.setItem(
             "settings",
             JSON.stringify({
@@ -28,6 +30,7 @@ export function useSettingsFromStorage() {
 
     async function setSettingsFromStorage() {
         const settingsStorage = await AsyncStorage.getItem("settings");
+
         if (!settingsStorage) {
             return;
         }
@@ -37,6 +40,7 @@ export function useSettingsFromStorage() {
             showTheSmallestExpense,
             sortByAmountExpense,
         } = JSON.parse(settingsStorage);
+
         dispatch(
             setAllSettings({
                 amountDaysInRecentScreen,

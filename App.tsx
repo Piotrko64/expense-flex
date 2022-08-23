@@ -16,6 +16,7 @@ import { useTranslation } from "react-i18next";
 import { GraphScreen } from "./screens/GraphScreen";
 import { SettingsScreen } from "./screens/SettingsScreen";
 import { useLanguageSetting } from "./hooks/useLanguageSetting";
+import { useSettingsFromStorage } from "./hooks/useSettingsToStorage";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -23,6 +24,7 @@ const BottomTabs = createBottomTabNavigator();
 function ExpensesOverview() {
     const { t } = useTranslation();
     useLanguageSetting();
+    useSettingsFromStorage();
     return (
         <BottomTabs.Navigator
             screenOptions={({ navigation }) => ({
