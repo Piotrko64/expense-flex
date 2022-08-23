@@ -23,7 +23,7 @@ export function ManageExpense({ route, navigation }: any) {
     );
 
     const descriptionExpense =
-        findExpenseById(allExpenses, editedExpenseId)?.description || "edit";
+        findExpenseById(allExpenses, editedExpenseId)?.description || t("edit");
     const dateExpense = findExpenseById(allExpenses, editedExpenseId)?.date;
 
     const dispatch = useDispatch();

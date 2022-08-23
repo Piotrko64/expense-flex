@@ -1,15 +1,77 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TextInput, View } from "react-native";
 import { CustomSwitch } from "../components/UI/CustomSwitch";
 import { GlobalColors } from "../constants/styles";
 import { useTranslation } from "react-i18next";
+import { NumberInput } from "../components/UI/NumberInput";
+import { useDispatch, useSelector } from "react-redux";
+import {
+    setDaysInRecentScreen,
+    setSortingByAmountExpenses,
+    showTheBiggestExpense,
+    showTheSmallestExpense,
+} from "../store/settings";
+import { SettingsInterface } from "../@types/_reducers/SettingsInterface";
+import { SelectOneInput } from "../components/UI/SelectOneInput";
+import { dataLanguage } from "../data/dataLanguages";
 
 export function SettingsScreen() {
     const { t } = useTranslation();
+    const numberInputValue = useSelector(
+        (state: SettingsInterface) =>
+            state.settingsReducer.amountDaysInRecentScreen
+    );
+    const IsSettingBiggestAmount = useSelector(
+        (state: SettingsInterface) =>
+            state.settingsReducer.showTheBiggestExpense
+    );
+    function changeSettingBiggestAmount(boolean: boolean) {
+        dispatch(showTheBiggestExpense(boolean));
+        console.log(IsSettingBiggestAmount);
+    }
+    const IsSettingSmallestAmount = useSelector(
+        (state: SettingsInterface) =>
+            state.settingsReducer.showTheSmallestExpense
+    );
+    function changeSettingSmallestAmount(boolean: boolean) {
+        dispatch(showTheSmallestExpense(boolean));
+        console.log(IsSettingBiggestAmount);
+    }
+    const IsSortByAmountExpense = useSelector(
+        (state: SettingsInterface) => state.settingsReducer.sortByAmountExpense
+    );
+    function changeSort(boolean: boolean) {
+        dispatch(setSortingByAmountExpenses(boolean));
+        console.log(boolean);
+    }
+
+    const dispatch = useDispatch();
+    function handleNumberInput(num: number) {
+        dispatch(setDaysInRecentScreen(Math.abs(num)));
+    }
+
     return (
         <View style={styles.container}>
-            <CustomSwitch active={true} describe={t("showBiggestExpense")} />
-            <CustomSwitch active={true} describe={t("showSmallestExpense")} />
-            <CustomSwitch active={false} describe={t("sortByAmounts")} />
+            <CustomSwitch
+                active={IsSettingBiggestAmount}
+                describe={t("showBiggestExpense")}
+                onChange={changeSettingBiggestAmount}
+            />
+            <CustomSwitch
+                active={IsSettingSmallestAmount}
+                describe={t("showSmallestExpense")}
+                onChange={changeSettingSmallestAmount}
+            />
+            <CustomSwitch
+                active={IsSortByAmountExpense}
+                describe={t("sortByAmounts")}
+                onChange={changeSort}
+            />
+            <NumberInput
+                describe="saddsaadsdsads sada sa "
+                value={numberInputValue}
+                onChange={handleNumberInput}
+            />
+            <SelectOneInput arrayData={dataLanguage} chooseValue="PL" />
         </View>
     );
 }

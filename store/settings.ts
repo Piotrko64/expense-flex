@@ -11,10 +11,14 @@ const settingsSlice = createSlice({
         showTheSmallestExpense: (state, action) => {
             state.showTheSmallestExpense = action.payload;
         },
-        isSortingByAmountExpenses: (state, action) => {
-            state.showTheSmallestExpense = action.payload;
+        setSortingByAmountExpenses: (state, action) => {
+            state.sortByAmountExpense = action.payload;
         },
         setDaysInRecentScreen: (state, action) => {
+            if (isNaN(action.payload)) {
+                state.amountDaysInRecentScreen = 0;
+                return;
+            }
             state.amountDaysInRecentScreen = action.payload;
         },
         setModeInGraphScreen: (state, action) => {
@@ -35,5 +39,5 @@ export const showTheSmallestExpense =
 export const setDaysInRecentScreen =
     settingsSlice.actions.setDaysInRecentScreen;
 export const setModeInGraphScreen = settingsSlice.actions.setModeInGraphScreen;
-export const isSortingByAmountExpenses =
-    settingsSlice.actions.isSortingByAmountExpenses;
+export const setSortingByAmountExpenses =
+    settingsSlice.actions.setSortingByAmountExpenses;

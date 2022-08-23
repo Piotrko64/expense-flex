@@ -27,6 +27,10 @@
         "settings": "Ustawienia",
         "showBiggestExpense": "Zaznacz na czerwono największe wydatki z obecnej listy",
         "showSmallestExpense": "Zaznacz na zielono najmniejsze wydatki z obecnej listy",
-        "sortByAmounts": "Sortuj względem wielkości wydatków"
+        "sortByAmounts": "Sortuj względem wielkości wydatków",
+        "last": "Ostatnie",
+        "days": "dni",
+        "months": "miesiące",
+        "years": "lata"
     }
 }

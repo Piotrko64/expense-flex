@@ -3,23 +3,20 @@ import { StyleSheet, Switch, Text, View } from "react-native";
 import { SwitchProps } from "../../@types/SwitchProps";
 import { GlobalColors } from "../../constants/styles";
 
-export function CustomSwitch({ active, describe }: SwitchProps) {
-    const [activeSwitch, setActiveSwitch] = useState(active);
+export function CustomSwitch({ active, describe, onChange }: SwitchProps) {
     function toggleActive() {
-        setActiveSwitch((state: boolean) => !state);
+        onChange(!active);
     }
     return (
         <View style={styles.container}>
             <Switch
                 trackColor={{ false: "#767577", true: GlobalColors.primary200 }}
                 thumbColor={
-                    activeSwitch
-                        ? GlobalColors.accent700
-                        : GlobalColors.primary100
+                    active ? GlobalColors.accent800 : GlobalColors.primary100
                 }
                 ios_backgroundColor="#3e3e3e"
                 onValueChange={toggleActive}
-                value={activeSwitch}
+                value={active}
             />
             <Text style={styles.describe}>{describe}</Text>
         </View>

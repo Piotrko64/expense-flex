@@ -61,7 +61,6 @@ export function ExpenseForm({
             {openDataPicker && (
                 <DateTimePicker
                     value={inputsValue.date}
-                    maximumDate={new Date()}
                     onChange={(value) => {
                         setOpenDataPicker(false);
                         setDataInputHandler(

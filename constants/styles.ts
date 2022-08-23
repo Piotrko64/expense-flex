@@ -11,6 +11,7 @@ export const GlobalColors = {
     primary800: "#200364",
     accent500: "#FFE936",
     accent700: "#e7c21c",
+    accent800: "#cea739",
     error50: "#800B24",
     error500: "#970B24",
     gray500: "#39324a",

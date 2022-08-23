@@ -1,5 +1,5 @@
 export const exampleSettings = {
-    showTheBiggestExpense: true,
+    showTheBiggestExpense: false,
     showTheSmallestExpense: true,
     sortByAmountExpense: false,
     amountDaysInRecentScreen: 7,
