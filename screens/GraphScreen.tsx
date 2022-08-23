@@ -1,4 +1,3 @@
-import { useLayoutEffect } from "react";
 import "../assets/i18n/i18n";
 import { ImageBackground, ScrollView, StyleSheet, View } from "react-native";
 
@@ -8,13 +7,7 @@ import { LinearGradient } from "expo-linear-gradient";
 
 import { GraphComponent } from "../components/GraphsScreen/GraphComponent";
 
-export function GraphScreen({ navigation }: any) {
-    useLayoutEffect(() => {
-        navigation.setOptions({
-            headerRight: null,
-        });
-    }, [navigation]);
-
+export function GraphScreen() {
     return (
         <View style={styles.backgroundContainer}>
             <LinearGradient

@@ -3,6 +3,4 @@ export const exampleSettings = {
     showTheSmallestExpense: true,
     sortByAmountExpense: false,
     amountDaysInRecentScreen: 7,
-    modeGraph: "years",
-    language: "",
 };

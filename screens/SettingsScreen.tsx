@@ -13,9 +13,21 @@ import {
 import { SettingsInterface } from "../@types/_reducers/SettingsInterface";
 import { SelectOneInput } from "../components/UI/SelectOneInput";
 import { dataLanguage } from "../data/dataLanguages";
+import { useLanguageSetting } from "../hooks/useLanguageSetting";
+import { useSettingsFromStorage } from "../hooks/useSettingsToStorage";
+import { useLayoutEffect } from "react";
 
-export function SettingsScreen() {
-    const { t } = useTranslation();
+export function SettingsScreen({ navigation }: any) {
+    useLayoutEffect(() => {
+        navigation.setOptions({
+            headerRight: null,
+        });
+    }, [navigation]);
+
+    const { t, i18n } = useTranslation();
+    const { changeLanguage } = useLanguageSetting();
+
+    useSettingsFromStorage();
     const numberInputValue = useSelector(
         (state: SettingsInterface) =>
             state.settingsReducer.amountDaysInRecentScreen
@@ -72,7 +84,11 @@ export function SettingsScreen() {
                 value={numberInputValue}
                 onChange={handleNumberInput}
             />
-            <SelectOneInput arrayData={dataLanguage} chooseValue="PL" />
+            <SelectOneInput
+                arrayData={dataLanguage}
+                chooseValue={i18n.language === "pl" ? "pl" : "en"}
+                onPress={changeLanguage}
+            />
         </View>
     );
 }

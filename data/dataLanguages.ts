@@ -3,10 +3,10 @@ import { DataToOneSelect } from "../@types/DataToOneSelectInput";
 export const dataLanguage: Array<DataToOneSelect> = [
     {
         name: "Polski/Polish",
-        value: "PL",
+        value: "pl",
     },
     {
         name: "English/Angielski",
-        value: "ENG",
+        value: "en",
     },
 ];

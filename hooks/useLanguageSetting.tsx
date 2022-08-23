@@ -4,10 +4,11 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useLayoutEffect } from "react";
 export function useLanguageSetting() {
     const { i18n } = useTranslation();
-    AsyncStorage.removeItem("language");
-    function changeLanguage(lang: "pl" | "en") {
+
+    function changeLanguage(lang: string) {
         i18n.changeLanguage(lang);
         AsyncStorage.setItem("language", lang);
+        console.log(i18n.language);
     }
 
     function setLocationLanguage() {

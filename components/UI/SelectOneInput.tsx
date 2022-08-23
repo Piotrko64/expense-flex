@@ -1,8 +1,13 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { DataToOneSelect } from "../../@types/DataToOneSelectInput";
+import { SelectOneInputInterface } from "../../@types/SelectOneInputInterface";
 import { GlobalColors } from "../../constants/styles";
 
-export function SelectOneInput({ onPress, arrayData, chooseValue }: any) {
+export function SelectOneInput({
+    onPress,
+    arrayData,
+    chooseValue,
+}: SelectOneInputInterface) {
     return (
         <View style={styles.flexContainer}>
             <View style={styles.row}>
@@ -16,7 +21,7 @@ export function SelectOneInput({ onPress, arrayData, chooseValue }: any) {
                     >
                         <Pressable
                             key={info.value}
-                            onPress={() => console.log(info.value)}
+                            onPress={() => onPress(info.value)}
                             style={({ pressed }) => [pressed && styles.pressed]}
                             android_ripple={{
                                 color: GlobalColors.forAndroidRipple,
@@ -58,6 +63,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 4,
         textAlign: "center",
+        color: "black",
     },
     row: {
         marginTop: 24,
