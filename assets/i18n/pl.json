@@ -32,6 +32,7 @@
         "days": "dni",
         "months": "miesiące",
         "years": "lata",
+        "noExpenses": "Brak Wydatków",
         "numberDays": "Liczba dni pokazanych w sekcji 'Ostatnie' "
     }
 }

@@ -46,14 +46,12 @@ export function SettingsScreen({ navigation }: any) {
     );
     function changeSettingSmallestAmount(boolean: boolean) {
         dispatch(showTheSmallestExpense(boolean));
-        console.log(IsSettingBiggestAmount);
     }
     const IsSortByAmountExpense = useSelector(
         (state: SettingsInterface) => state.settingsReducer.sortByAmountExpense
     );
     function changeSort(boolean: boolean) {
         dispatch(setSortingByAmountExpenses(boolean));
-        console.log(boolean);
     }
 
     const dispatch = useDispatch();

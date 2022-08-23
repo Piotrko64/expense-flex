@@ -3,11 +3,14 @@ import { useSelector } from "react-redux";
 import { OneExpense } from "../@types/OneExpense";
 import { SettingsInterface } from "../@types/_reducers/SettingsInterface";
 import { useTranslation } from "react-i18next";
+import { ExpensesReducerInterface } from "../@types/_reducers/ExpensesReducerInterface";
 
 export function RecentExpenses() {
     const { t } = useTranslation();
 
-    const expenses = useSelector((state: any) => state.expensesReducer);
+    const expenses = useSelector(
+        (state: ExpensesReducerInterface) => state.expensesReducer
+    );
     const amountDays = useSelector(
         (state: SettingsInterface) =>
             state.settingsReducer.amountDaysInRecentScreen

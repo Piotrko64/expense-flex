@@ -1,6 +1,4 @@
-import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
-import { useEffect, useState } from "react";
-import { StyleSheet, Switch, Text, TextInput, View } from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 import { GlobalColors } from "../../constants/styles";
 
 export function NumberInput({

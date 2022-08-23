@@ -1,11 +1,11 @@
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-
 import { ExpensesList } from "./ExpensesList";
 import { ExpensesSummary } from "./ExpensesSummary";
 import { GlobalColors } from "../../constants/styles";
 import { useUpdateAsyncStorage } from "../../hooks/useUpdateAsyncStorage";
 import { OneExpense } from "../../@types/OneExpense";
+import { useTranslation } from "react-i18next";
 
 export function ExpensesOutput({
     expenses,
@@ -15,7 +15,7 @@ export function ExpensesOutput({
     periodExpenses: string;
 }) {
     useUpdateAsyncStorage();
-
+    const { t } = useTranslation();
     return (
         <View style={styles.container}>
             <LinearGradient
@@ -34,7 +34,9 @@ export function ExpensesOutput({
                     />
                     <ExpensesList expensesList={expenses} />
                     {!expenses.length && (
-                        <Text style={styles.noNotesContainer}>No Expenses</Text>
+                        <Text style={styles.noNotesContainer}>
+                            {t("noExpenses")}
+                        </Text>
                     )}
                 </ImageBackground>
             </LinearGradient>

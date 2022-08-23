@@ -28,7 +28,7 @@
         "showBiggestExpense": "Mark in red the biggest expenses from the current list",
         "showSmallestExpense": "Mark in green the smallest expenses from the current list",
         "sortByAmounts": "Sort by expense size",
-
+        "noExpenses": "No Expenses",
         "days": "days",
         "months": "months",
         "years": "years",

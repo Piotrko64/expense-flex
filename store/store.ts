@@ -1,5 +1,5 @@
 import { settingsReducer } from "./settings";
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 
 import { expensesReducer } from "./expenses";
 
@@ -8,5 +8,4 @@ export const store = configureStore({
         expensesReducer,
         settingsReducer,
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });

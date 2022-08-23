@@ -1,8 +1,6 @@
-import { useState } from "react";
 import { FlatList } from "react-native";
 import { useSelector } from "react-redux";
 import { OneExpense } from "../../@types/OneExpense";
-import { ExpensesReducerInterface } from "../../@types/_reducers/ExpensesReducerInterface";
 import { SettingsInterface } from "../../@types/_reducers/SettingsInterface";
 import { findTheBiggestAmountExpense } from "../../util/markExpenses/findTheBiggesAmountExpense";
 import { findTheSmallestAmountExpense } from "../../util/markExpenses/findTheSmallestAmountExpense";

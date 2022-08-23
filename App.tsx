@@ -47,7 +47,7 @@ function ExpensesOverview() {
                         <IconButton
                             icon="add"
                             size={32}
-                            color={tintColor}
+                            color={tintColor || "white"}
                             onPress={() => {
                                 navigation.navigate("ManageExpense");
                             }}

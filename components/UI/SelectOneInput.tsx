@@ -9,43 +9,40 @@ export function SelectOneInput({
     chooseValue,
 }: SelectOneInputInterface) {
     return (
-        <View style={styles.flexContainer}>
-            <View style={styles.row}>
-                {arrayData.map((info: DataToOneSelect) => (
-                    <View
+        <View style={styles.row}>
+            {arrayData.map((info: DataToOneSelect) => (
+                <View
+                    key={info.value}
+                    style={[
+                        styles.block,
+                        chooseValue === info.value && styles.chooseBlock,
+                    ]}
+                >
+                    <Pressable
                         key={info.value}
-                        style={[
-                            styles.block,
-                            chooseValue === info.value && styles.chooseBlock,
-                        ]}
+                        onPress={() => onPress(info.value)}
+                        style={({ pressed }) => [pressed && styles.pressed]}
+                        android_ripple={{
+                            color: GlobalColors.forAndroidRipple,
+                        }}
                     >
-                        <Pressable
-                            key={info.value}
-                            onPress={() => onPress(info.value)}
-                            style={({ pressed }) => [pressed && styles.pressed]}
-                            android_ripple={{
-                                color: GlobalColors.forAndroidRipple,
-                            }}
+                        <Text
+                            style={[
+                                styles.oneBlockText,
+                                chooseValue === info.value &&
+                                    styles.chooseBlock,
+                            ]}
                         >
-                            <Text
-                                style={[
-                                    styles.oneBlockText,
-                                    chooseValue === info.value &&
-                                        styles.chooseBlock,
-                                ]}
-                            >
-                                {info.name}
-                            </Text>
-                        </Pressable>
-                    </View>
-                ))}
-            </View>
+                            {info.name}
+                        </Text>
+                    </Pressable>
+                </View>
+            ))}
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    flexContainer: {},
     block: {
         margin: 2,
         overflow: "hidden",

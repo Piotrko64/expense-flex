@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { StyleSheet, Switch, Text, View } from "react-native";
 import { SwitchProps } from "../../@types/SwitchProps";
 import { GlobalColors } from "../../constants/styles";

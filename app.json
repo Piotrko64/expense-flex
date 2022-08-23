@@ -8,9 +8,9 @@
         "userInterfaceStyle": "dark",
         "backgroundColor": "#A7BAF2",
         "splash": {
-            "image": "./assets/splashScreen2.png",
+            "image": "./assets/splashScreen3.png",
             "resizeMode": "contain",
-            "backgroundColor": "#222d4e"
+            "backgroundColor": "#272C3C"
         },
         "updates": {
             "fallbackToCacheTimeout": 0

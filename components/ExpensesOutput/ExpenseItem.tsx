@@ -1,11 +1,8 @@
 import { Pressable, StyleSheet, Text, Vibration, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
 import { GlobalColors } from "../../constants/styles";
 import { getFormattedDate } from "../../util/datesFunction/getFormatDate";
 import { useAlertDelete } from "../../hooks/useAlertDelete";
-import { useSelector } from "react-redux";
-import { ExpensesReducerInterface } from "../../@types/_reducers/ExpensesReducerInterface";
 
 export function ExpenseItem({
     id,
@@ -24,7 +21,7 @@ export function ExpenseItem({
         });
     }
 
-    function deleteItemOnlongPress() {
+    function deleteItemOnLongPress() {
         Vibration.vibrate(40);
         showAlert(false);
     }
@@ -33,7 +30,7 @@ export function ExpenseItem({
         <Pressable
             onPress={expensePressHandler}
             style={({ pressed }) => pressed && styles.pressed}
-            onLongPress={deleteItemOnlongPress}
+            onLongPress={deleteItemOnLongPress}
         >
             <View style={styles.expenseItem}>
                 <View>
