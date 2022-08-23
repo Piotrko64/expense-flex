@@ -21,23 +21,21 @@ const settingsSlice = createSlice({
             }
             state.amountDaysInRecentScreen = action.payload;
         },
-        setModeInGraphScreen: (state, action) => {
-            state.modeGraph = action.payload;
-        },
-        setLanguage: (state, action) => {
-            state.language = action.payload;
+        setAllSettings: (_state, action) => {
+            return action.payload;
         },
     },
 });
 export const settingsReducer = settingsSlice.reducer;
 
-export const setLanguage = settingsSlice.actions.setLanguage;
 export const showTheBiggestExpense =
     settingsSlice.actions.showTheBiggestExpense;
 export const showTheSmallestExpense =
     settingsSlice.actions.showTheSmallestExpense;
 export const setDaysInRecentScreen =
     settingsSlice.actions.setDaysInRecentScreen;
-export const setModeInGraphScreen = settingsSlice.actions.setModeInGraphScreen;
+
 export const setSortingByAmountExpenses =
     settingsSlice.actions.setSortingByAmountExpenses;
+
+export const setAllSettings = settingsSlice.actions.setAllSettings;
