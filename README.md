@@ -49,13 +49,18 @@
 
 # About 
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/185704743-491b3270-2f7d-4e3d-8d92-70e03c355093.jpg" width="280"/><p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/186268802-96ddd6c2-8c80-43bc-9627-8594c7a8ade6.jpg" width="280"/><p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/186268893-03366f1a-ff35-4f66-ae9c-933f7e822bf9.jpg" width="280"/><p>
+
 
 I wanted check is creating mobile app  for me will be good experience. 
 Well, I think that create simple app like this is very easy.
 In future I would like do more demanding mobile app.
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/185704702-67cca491-752b-4ca5-a172-f26173a0569f.jpg" width="280"/><p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/186269054-85579e05-6d0e-4f1f-ba96-ba3ea6647375.jpg" width="280"/><p>
+
+## You can also change language of application (polish or english) - I use i18n! 
+<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/186269293-48631212-0292-4015-9592-73b6c2a6132f.jpg" width="280"/><p>
 
 Of course my target is web development but I love React and I wanted check what is react native
 
