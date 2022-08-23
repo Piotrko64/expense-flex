@@ -6,7 +6,7 @@
 
 
 
-<p align="center"> Expense Flex is my first react-native app (for android) </p>
+<p align="center"> Expense Flex is my first multilanguage react-native app (for android) </p>
 
 
 
