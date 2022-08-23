@@ -65,7 +65,6 @@ export function useDataToGraph(mode: ModesGraph) {
                     ...oldDataLabels,
                 ]);
             }
-            console.log(labels, dataLabel);
         }
     }, [mode, Expenses]);
     return [labels, dataLabel];

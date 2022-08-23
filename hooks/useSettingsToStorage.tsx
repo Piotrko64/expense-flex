@@ -15,8 +15,8 @@ export function useSettingsFromStorage() {
     const dispatch = useDispatch();
 
     async function saveSettings() {
-        const settingsStorage = await AsyncStorage.getItem("settings");
-        console.log(settingsStorage);
+        await AsyncStorage.getItem("settings");
+
         await AsyncStorage.setItem(
             "settings",
             JSON.stringify({

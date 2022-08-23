@@ -21,7 +21,7 @@ const settingsSlice = createSlice({
             }
             state.amountDaysInRecentScreen = action.payload;
         },
-        setAllSettings: (state, action) => {
+        setAllSettings: (_state, action) => {
             return action.payload;
         },
     },
