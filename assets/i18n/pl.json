@@ -35,6 +35,7 @@
         "noExpenses": "Brak Wydatków",
         "numberDays": "Liczba dni pokazanych w sekcji 'Ostatnie' ",
         "invalidInputs": "Nie poprawne dane",
-        "plsCheck": "Sprawdź wszystkie pola"
+        "plsCheck": "Sprawdź wszystkie pola",
+"wantDelete": "Czy na pewno usunąć ten wydatek?"
     }
 }
