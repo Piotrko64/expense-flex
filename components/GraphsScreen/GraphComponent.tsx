@@ -7,6 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 import { ModesGraph } from "../../@types/ModesGraph";
 import { useTranslation } from "react-i18next";
 import { GlobalColors } from "../../constants/styles";
+import { ChartData } from "react-native-chart-kit/dist/HelperTypes";
 
 export function GraphComponent({ mode }: { mode: ModesGraph }) {
     const navigation = useNavigation();
@@ -35,7 +36,7 @@ export function GraphComponent({ mode }: { mode: ModesGraph }) {
         <View style={styles.backgroundContainer}>
             <Text style={styles.header}>{`${t("last")} ${t(mode)}`}</Text>
             <BarChart
-                data={data}
+                data={data as ChartData}
                 width={screenWidth - 10}
                 height={300}
                 yAxisLabel=""

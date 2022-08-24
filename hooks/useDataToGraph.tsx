@@ -16,7 +16,7 @@ export function useDataToGraph(mode: ModesGraph) {
         (state: ExpensesReducerInterface) => state.expensesReducer
     );
 
-    const [labels, setLabels] = useState<Array<string>>([]);
+    const [labels, setLabels] = useState<string[]>([]);
     const [dataLabel, setDataLabel] = useState<Array<number>>([]);
 
     useEffect(() => {

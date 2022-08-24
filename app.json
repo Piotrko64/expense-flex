@@ -4,7 +4,7 @@
         "slug": "expense-flex",
         "version": "1.1.1",
         "orientation": "portrait",
-        "icon": "./assets/basicIcons/iconSplash1.png",
+        "icon": "./assets/basicIcons/iconApp.png",
         "userInterfaceStyle": "dark",
         "backgroundColor": "#A7BAF2",
         "splash": {
@@ -21,7 +21,7 @@
         },
         "android": {
             "adaptiveIcon": {
-                "foregroundImage": "./assets/basicIcons/iconSplash1.png",
+                "foregroundImage": "./assets/basicIcons/iconApp.png",
                 "backgroundColor": "#000"
             },
             "package": "com.piotrko64.expenseflex"

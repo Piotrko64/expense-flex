@@ -24,14 +24,20 @@ export function SettingsScreen({ navigation }: any) {
         });
     }, [navigation]);
 
+    useSettingsFromStorage();
+
     const { t, i18n } = useTranslation();
     const { changeLanguage } = useLanguageSetting();
+    const dispatch = useDispatch();
 
-    useSettingsFromStorage();
     const numberInputValue = useSelector(
         (state: SettingsInterface) =>
             state.settingsReducer.amountDaysInRecentScreen
     );
+    function handleNumberInput(num: number) {
+        dispatch(setDaysInRecentScreen(Math.abs(num)));
+    }
+
     const IsSettingBiggestAmount = useSelector(
         (state: SettingsInterface) =>
             state.settingsReducer.showTheBiggestExpense
@@ -40,6 +46,7 @@ export function SettingsScreen({ navigation }: any) {
         dispatch(showTheBiggestExpense(boolean));
         console.log(IsSettingBiggestAmount);
     }
+
     const IsSettingSmallestAmount = useSelector(
         (state: SettingsInterface) =>
             state.settingsReducer.showTheSmallestExpense
@@ -47,17 +54,12 @@ export function SettingsScreen({ navigation }: any) {
     function changeSettingSmallestAmount(boolean: boolean) {
         dispatch(showTheSmallestExpense(boolean));
     }
+
     const IsSortByAmountExpense = useSelector(
         (state: SettingsInterface) => state.settingsReducer.sortByAmountExpense
     );
     function changeSort(boolean: boolean) {
         dispatch(setSortingByAmountExpenses(boolean));
-    }
-
-    const dispatch = useDispatch();
-
-    function handleNumberInput(num: number) {
-        dispatch(setDaysInRecentScreen(Math.abs(num)));
     }
 
     return (
