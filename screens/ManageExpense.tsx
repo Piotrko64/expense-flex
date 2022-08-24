@@ -64,7 +64,10 @@ export function ManageExpense({ route, navigation }: any) {
 
     return (
         <View style={styles.backgroundContainer}>
-            <ScrollView contentContainerStyle={styles.container}>
+            <ScrollView
+                contentContainerStyle={styles.container}
+                keyboardShouldPersistTaps="always"
+            >
                 {isEditing && <MoreExpensiveInformation date={dateExpense} />}
                 <ExpenseForm
                     id={editedExpenseId}
