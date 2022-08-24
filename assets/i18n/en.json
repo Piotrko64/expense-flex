@@ -35,6 +35,7 @@
         "numberDays": "Number of days shown in the 'Recent' section",
         "invalidInputs": "Invalid Inputs",
         "plsCheck": "Please check your input values",
-"wantDelete": "Do you want delete this expense?"
+"wantDelete": "Do you want delete this expense?",
+"yes": "Tak"
     }
 }
