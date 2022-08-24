@@ -42,7 +42,7 @@
 
 # Instalation mobile app for your adroid device
 
-[Click this link and install app on your mobile](https://expo.dev/accounts/piotrko64/projects/expense-flex/builds/61705780-719e-4403-bb77-107babf6cafa)
+[Click this link and install app on your mobile](https://expo.dev/accounts/piotrko64/projects/expense-flex/builds/9f552667-1607-4b45-9d11-ebf6d46e4aa2)
 
 Or use Code QR
 
