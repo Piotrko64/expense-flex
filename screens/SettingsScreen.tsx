@@ -44,7 +44,6 @@ export function SettingsScreen({ navigation }: any) {
     );
     function changeSettingBiggestAmount(boolean: boolean) {
         dispatch(showTheBiggestExpense(boolean));
-        console.log(IsSettingBiggestAmount);
     }
 
     const IsSettingSmallestAmount = useSelector(

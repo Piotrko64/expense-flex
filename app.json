@@ -2,7 +2,7 @@
     "expo": {
         "name": "Expense Flex",
         "slug": "expense-flex",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "orientation": "portrait",
         "icon": "./assets/basicIcons/iconApp.png",
         "userInterfaceStyle": "dark",

@@ -8,7 +8,6 @@ export function useLanguageSetting() {
     function changeLanguage(lang: string) {
         i18n.changeLanguage(lang);
         AsyncStorage.setItem("language", lang);
-        console.log(i18n.language);
     }
 
     function setLocationLanguage() {
