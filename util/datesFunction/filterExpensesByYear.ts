@@ -5,7 +5,7 @@ export function filterExpensesByYear(
     year: number
 ) {
     const listCorrectExpenses = listExpenses.filter(
-        (date) => year && new Date(date.date).getFullYear() === year
+        (date) => new Date(date.date).getFullYear() === year
     );
 
     return listCorrectExpenses.reduce((sum: number, expense: OneExpense) => {

@@ -7,13 +7,13 @@ describe("Is translate number to month is properly", () => {
 
         const result = convertNameMonth(2, true).toUpperCase();
 
-        expect(result).toEqual(polishFebruary);
+        expect(polishFebruary).toEqual(result);
     });
     test("Check transform 12 on december ", () => {
         const december = "december".toUpperCase();
 
         const result = convertNameMonth(12, false).toUpperCase();
 
-        expect(result).toEqual(december);
+        expect(december).toEqual(result);
     });
 });

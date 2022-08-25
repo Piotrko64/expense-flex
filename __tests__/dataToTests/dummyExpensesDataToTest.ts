@@ -31,4 +31,10 @@ export const dummyExpensesDataToTest: Array<OneExpense> = [
         amount: "1",
         date: "2021-02-08",
     },
+    {
+        id: "el4ss",
+        description: "Hello1",
+        amount: "5",
+        date: "2010-01-08",
+    },
 ];

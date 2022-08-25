@@ -1,6 +1,5 @@
 import { parseISO, format } from "date-fns";
 import { pl } from "date-fns/locale";
-import enUsLocale from "date-fns/locale/en-US";
 
 export function getEarlierDay(howEarly: number) {
     const today = new Date();
@@ -10,12 +9,12 @@ export function getEarlierDay(howEarly: number) {
     return previous;
 }
 
-export function convertToShowDayAndMonth(date: Date, isPl: boolean) {
+export function convertToShowDayAndMonth(date: Date) {
     return format(parseISO(new Date(date).toISOString()), "dd.MM", {
-        locale: isPl ? pl : enUsLocale,
+        locale: pl,
     });
 }
 
-export function getFormattedEarlierDay(howEarly: number, isPL: boolean) {
-    return convertToShowDayAndMonth(getEarlierDay(howEarly), isPL);
+export function getFormattedEarlierDay(howEarly: number) {
+    return convertToShowDayAndMonth(getEarlierDay(howEarly));
 }
