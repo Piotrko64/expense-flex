@@ -7,9 +7,7 @@ export function filterExpensesByMonthAndYear(
 ) {
     const listCorrectExpenses = listExpenses.filter(
         (date) =>
-            year &&
             new Date(date.date).getFullYear() === year &&
-            month &&
             new Date(date.date).getMonth() === month
     );
 
