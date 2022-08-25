@@ -18,7 +18,7 @@
 <img src="https://user-images.githubusercontent.com/77500425/185703352-050d1a01-1220-4bd5-8d54-664d5af46bad.png" alt="Expo"  height="50" align="center"/>
 <img src="https://user-images.githubusercontent.com/77500425/185703524-d6385ebf-3401-4061-8167-2bc63c13727d.png" alt="React NAtive"  height="50" align="center"/>
 <img src="https://user-images.githubusercontent.com/77500425/186013478-fdf4ea21-8745-4c5d-9591-35e45e39c66f.png" title="i18n"  width="70" align="center"/>
-<img alt="Vitest" height="50px" src="https://vitest.dev/logo.svg" title="Vitest"/>
+<img alt="Vitest" width="50px" src="https://vitest.dev/logo.svg" title="Vitest"/>
 </div>
 
 <br />
