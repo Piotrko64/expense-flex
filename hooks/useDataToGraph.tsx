@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { ModesGraph } from "../@types/ModesGraph";
 import { ExpensesReducerInterface } from "../@types/_reducers/ExpensesReducerInterface";
@@ -18,11 +19,14 @@ export function useDataToGraph(mode: ModesGraph) {
 
     const [labels, setLabels] = useState<string[]>([]);
     const [dataLabel, setDataLabel] = useState<Array<number>>([]);
+    const { i18n } = useTranslation();
 
     useEffect(() => {
         const today = new Date();
         const thisYear = today.getFullYear();
         const thisMonth = today.getMonth();
+
+        const isPL = i18n.language === "pl";
 
         setLabels([]);
         setDataLabel([]);
@@ -40,7 +44,7 @@ export function useDataToGraph(mode: ModesGraph) {
         } else if (mode === "months") {
             for (let i = 0; i <= 5; i++) {
                 setLabels((oldLabels) => [
-                    convertNameMonth(thisMonth - i, true),
+                    convertNameMonth(thisMonth - i, isPL),
                     ...oldLabels,
                 ]);
 
@@ -56,7 +60,7 @@ export function useDataToGraph(mode: ModesGraph) {
         } else if (mode === "days") {
             for (let i = 0; i <= 6; i++) {
                 setLabels((oldLabels) => [
-                    getFormattedEarlierDay(i, true),
+                    getFormattedEarlierDay(i, isPL),
                     ...oldLabels,
                 ]);
 
@@ -66,6 +70,6 @@ export function useDataToGraph(mode: ModesGraph) {
                 ]);
             }
         }
-    }, [mode, Expenses]);
+    }, [mode, Expenses, i18n.language]);
     return [labels, dataLabel];
 }
