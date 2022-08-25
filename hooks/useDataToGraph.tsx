@@ -24,7 +24,7 @@ export function useDataToGraph(mode: ModesGraph) {
     useEffect(() => {
         const today = new Date();
         const thisYear = today.getFullYear();
-        const thisMonth = today.getMonth();
+        const thisMonth = today.getMonth() + 1;
 
         const isPL = i18n.language === "pl";
 
