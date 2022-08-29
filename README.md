@@ -1,4 +1,4 @@
-# <p align="center">[Expense Flex](https://expo.dev/accounts/piotrko64/projects/expense-flex/builds/70caff84-a84b-4a25-a85c-841a4b331a20)</p>
+# <p align="center">[Expense Flex](https://expo.dev/accounts/piotrko64/projects/expense-flex/builds/a4a702c0-29c8-4dfd-90ae-ef81d5cf8fe7)</p>
 
 <br />
 
@@ -18,7 +18,7 @@
 <img src="https://user-images.githubusercontent.com/77500425/185703352-050d1a01-1220-4bd5-8d54-664d5af46bad.png" alt="Expo"  height="50" align="center"/>
 <img src="https://user-images.githubusercontent.com/77500425/185703524-d6385ebf-3401-4061-8167-2bc63c13727d.png" alt="React NAtive"  height="50" align="center"/>
 <img src="https://user-images.githubusercontent.com/77500425/186013478-fdf4ea21-8745-4c5d-9591-35e45e39c66f.png" title="i18n"  width="70" align="center"/>
-
+<img alt="Vitest" width="50px" height="50" src="https://vitest.dev/logo.svg" title="Vitest" align="center"/>
 </div>
 
 <br />
@@ -42,14 +42,15 @@
 
 # Instalation mobile app for your adroid device
 
-[Click this link and install app on your mobile](https://expo.dev/accounts/piotrko64/projects/expense-flex/builds/70caff84-a84b-4a25-a85c-841a4b331a20)
+[Click this link and install app on your mobile](https://expo.dev/accounts/piotrko64/projects/expense-flex/builds/a4a702c0-29c8-4dfd-90ae-ef81d5cf8fe7)
 
 Or use Code QR
 
 <br/>
 
 
-![image](https://user-images.githubusercontent.com/77500425/186589124-326d7461-919b-4e92-a4e3-4a98fdbb6ecc.png)
+
+![image](https://user-images.githubusercontent.com/77500425/187142336-9e70c6cc-70db-4c03-915d-1be68cb53e7d.png)
 
 
 
