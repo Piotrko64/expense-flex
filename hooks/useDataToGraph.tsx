@@ -52,7 +52,7 @@ export function useDataToGraph(mode: ModesGraph) {
                     +filterExpensesByMonthAndYear(
                         Expenses,
                         thisYear,
-                        thisMonth - i
+                        thisMonth - i - 1
                     ),
                     ...oldDataLabels,
                 ]);
@@ -60,7 +60,7 @@ export function useDataToGraph(mode: ModesGraph) {
         } else if (mode === "days") {
             for (let i = 0; i <= 6; i++) {
                 setLabels((oldLabels) => [
-                    getFormattedEarlierDay(i, isPL),
+                    getFormattedEarlierDay(i),
                     ...oldLabels,
                 ]);
 
