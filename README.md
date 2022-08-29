@@ -49,7 +49,8 @@ Or use Code QR
 <br/>
 
 
-![image](https://user-images.githubusercontent.com/77500425/186589124-326d7461-919b-4e92-a4e3-4a98fdbb6ecc.png)
+
+![image](https://user-images.githubusercontent.com/77500425/187142336-9e70c6cc-70db-4c03-915d-1be68cb53e7d.png)
 
 
 
