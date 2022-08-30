@@ -7,7 +7,7 @@ export function IconButton({
     color,
     onPress,
 }: {
-    icon: any;
+    icon: keyof typeof Ionicons.glyphMap;
     size: number;
     color: string;
     onPress: () => void;

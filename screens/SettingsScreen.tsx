@@ -16,11 +16,12 @@ import { dataLanguage } from "../data/dataLanguages";
 import { useLanguageSetting } from "../hooks/useLanguageSetting";
 import { useSettingsFromStorage } from "../hooks/useSettingsToStorage";
 import { useLayoutEffect } from "react";
+import { NavigationProps } from "../@types/NavigationProps";
 
-export function SettingsScreen({ navigation }: any) {
+export function SettingsScreen({ navigation }: NavigationProps) {
     useLayoutEffect(() => {
         navigation.setOptions({
-            headerRight: null,
+            headerRight: undefined,
         });
     }, [navigation]);
 

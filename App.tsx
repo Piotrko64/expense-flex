@@ -17,8 +17,9 @@ import { GraphScreen } from "./screens/GraphScreen";
 import { SettingsScreen } from "./screens/SettingsScreen";
 import { useLanguageSetting } from "./hooks/useLanguageSetting";
 import { useSettingsFromStorage } from "./hooks/useSettingsToStorage";
+import { RootStackParamsList } from "./@types/RootStackParamsList";
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamsList>();
 const BottomTabs = createBottomTabNavigator();
 
 function ExpensesOverview() {

@@ -13,17 +13,19 @@ import { useAlertDelete } from "../hooks/useAlertDelete";
 import { addExpense, updateExpense } from "../store/expenses";
 import { findExpenseById } from "../util/findExpenseById";
 import { validForm } from "../util/validForm";
+import { NavigationProps } from "../@types/NavigationProps";
 
-export function ManageExpense({ route, navigation }: any) {
+export function ManageExpense({ route, navigation }: NavigationProps) {
     const { t } = useTranslation();
-    const editedExpenseId = route.params?.expenseId;
+    const editedExpenseId = route.params!.expenseId;
     const isEditing = !!editedExpenseId;
+
     const allExpenses = useSelector(
         (state: ExpensesReducerInterface) => state.expensesReducer
     );
 
     const descriptionExpense =
-        findExpenseById(allExpenses, editedExpenseId)?.description || t("edit");
+        findExpenseById(allExpenses, editedExpenseId)!.description || t("edit");
     const dateExpense = findExpenseById(allExpenses, editedExpenseId)?.date;
 
     const dispatch = useDispatch();
@@ -68,7 +70,9 @@ export function ManageExpense({ route, navigation }: any) {
                 contentContainerStyle={styles.container}
                 keyboardShouldPersistTaps="always"
             >
-                {isEditing && <MoreExpensiveInformation date={dateExpense} />}
+                {isEditing && (
+                    <MoreExpensiveInformation date={dateExpense as string} />
+                )}
                 <ExpenseForm
                     id={editedExpenseId}
                     isEditing={isEditing}

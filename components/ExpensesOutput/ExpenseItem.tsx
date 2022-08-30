@@ -5,6 +5,7 @@ import { getFormattedDate } from "../../util/datesFunction/getFormatDate";
 import { useAlertDelete } from "../../hooks/useAlertDelete";
 import { ExpenseItemInterface } from "../../@types/ExpenseItemInterface";
 import { useTranslation } from "react-i18next";
+import { HookUseNavigationProp } from "../../@types/NavigationProps";
 
 export function ExpenseItem({
     id,
@@ -14,7 +15,7 @@ export function ExpenseItem({
     isSmallest,
     isBiggest,
 }: ExpenseItemInterface) {
-    const navigation = useNavigation<any>();
+    const navigation = useNavigation<HookUseNavigationProp>();
     const [showAlert] = useAlertDelete(description, id);
     const { i18n } = useTranslation();
 
