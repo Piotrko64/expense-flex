@@ -64,6 +64,7 @@ Also you can:
  - look your expenses on graphs
  - set amount days in 'last' section
  - mark the biggest and the smallest expenses on list
+and more
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/77500425/186268802-96ddd6c2-8c80-43bc-9627-8594c7a8ade6.jpg" width="280"/><p>
 <p align="center"> <img src="https://user-images.githubusercontent.com/77500425/186268893-03366f1a-ff35-4f66-ae9c-933f7e822bf9.jpg" width="280"/><p>
