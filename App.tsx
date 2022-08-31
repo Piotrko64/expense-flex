@@ -7,6 +7,9 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 import { RootStackParamsList } from "./@types/RootStackParamsList";
 import { NavigationExpensesOverview } from "./NavigationExpensesOverview";
+import { MMKV } from "react-native-mmkv";
+
+export const storage = new MMKV();
 
 const Stack = createNativeStackNavigator<RootStackParamsList>();
 

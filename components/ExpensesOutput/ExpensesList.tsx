@@ -62,7 +62,7 @@ export function ExpensesList({
                     }
                 />
             )}
-            keyExtractor={(item) => item.id!}
+            keyExtractor={(item) => item.id}
         />
     );
 }
