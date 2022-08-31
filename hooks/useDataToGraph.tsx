@@ -30,45 +30,45 @@ export function useDataToGraph(mode: ModesGraph) {
 
         setLabels([]);
         setDataLabel([]);
+
+        function arrayRange(range: number) {
+            return [...Array(range).keys()].reverse();
+        }
+
         if (mode === "years") {
-            for (let i = 0; i <= 5; i++) {
-                setLabels((oldLabels) => [
-                    (thisYear - i).toString(),
-                    ...oldLabels,
-                ]);
-                setDataLabel((oldDataLabels) => [
-                    +filterExpensesByYear(Expenses, thisYear - i),
-                    ...oldDataLabels,
-                ]);
-            }
+            setLabels(
+                arrayRange(6).map((number) => (thisYear - number).toString())
+            );
+            setDataLabel(
+                arrayRange(6).map(
+                    (number) =>
+                        +filterExpensesByYear(Expenses, thisYear - number)
+                )
+            );
         } else if (mode === "months") {
-            for (let i = 0; i <= 5; i++) {
-                setLabels((oldLabels) => [
-                    convertNameMonth(thisMonth - i, isPL),
-                    ...oldLabels,
-                ]);
-
-                setDataLabel((oldDataLabels) => [
-                    +filterExpensesByMonthAndYear(
-                        Expenses,
-                        thisYear,
-                        thisMonth - i - 1
-                    ),
-                    ...oldDataLabels,
-                ]);
-            }
+            setLabels(
+                arrayRange(6).map((numberMonth) =>
+                    convertNameMonth(thisMonth - numberMonth, isPL)
+                )
+            );
+            setDataLabel(
+                arrayRange(6).map(
+                    (numberMonth) =>
+                        +filterExpensesByMonthAndYear(
+                            Expenses,
+                            thisYear,
+                            thisMonth - numberMonth - 1
+                        )
+                )
+            );
         } else if (mode === "days") {
-            for (let i = 0; i <= 6; i++) {
-                setLabels((oldLabels) => [
-                    getFormattedEarlierDay(i),
-                    ...oldLabels,
-                ]);
-
-                setDataLabel((oldDataLabels) => [
-                    +filterExpensesFromDay(Expenses, getEarlierDay(i)),
-                    ...oldDataLabels,
-                ]);
-            }
+            setLabels(arrayRange(7).map((day) => getFormattedEarlierDay(day)));
+            setDataLabel(
+                arrayRange(7).map(
+                    (day) =>
+                        +filterExpensesFromDay(Expenses, getEarlierDay(day))
+                )
+            );
         }
     }, [mode, Expenses, i18n.language]);
     return [labels, dataLabel];

@@ -4,7 +4,7 @@ import { Alert } from "react-native";
 import { useDispatch } from "react-redux";
 import { removeExpense } from "../store/expenses";
 
-export function useAlertDelete(descriptionExpense: string, expenseId: string) {
+export function useAlertDelete(descriptionExpense: string, expenseId?: string) {
     const navigation = useNavigation();
     const dispatch = useDispatch();
 

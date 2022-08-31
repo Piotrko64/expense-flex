@@ -19,7 +19,7 @@ export function ExpenseForm({
     confirmHandler,
     cancelModalHandler,
 }: {
-    id: string;
+    id?: string;
     isEditing: boolean;
     cancelModalHandler: () => void;
     confirmHandler: (data: OneExpense) => void;
@@ -37,7 +37,7 @@ export function ExpenseForm({
     );
 
     useEffect(() => {
-        const expense = findExpenseById(allExpenses, id);
+        const expense = findExpenseById(allExpenses, id!);
         if (expense) {
             setInputsValue((values) => ({
                 ...values,

@@ -17,16 +17,19 @@ import { NavigationProps } from "../@types/NavigationProps";
 
 export function ManageExpense({ route, navigation }: NavigationProps) {
     const { t } = useTranslation();
-    const editedExpenseId = route.params!.expenseId;
+
+    const editedExpenseId = route.params?.expenseId;
     const isEditing = !!editedExpenseId;
 
     const allExpenses = useSelector(
         (state: ExpensesReducerInterface) => state.expensesReducer
     );
 
-    const descriptionExpense =
-        findExpenseById(allExpenses, editedExpenseId)!.description || t("edit");
-    const dateExpense = findExpenseById(allExpenses, editedExpenseId)?.date;
+    const descriptionExpense = isEditing
+        ? findExpenseById(allExpenses, editedExpenseId)?.description!
+        : t("edit");
+    const dateExpense =
+        isEditing && findExpenseById(allExpenses, editedExpenseId)?.date;
 
     const dispatch = useDispatch();
     const [showAlert] = useAlertDelete(descriptionExpense, editedExpenseId);
