@@ -1,17 +1,14 @@
 import { useTranslation } from "react-i18next";
 import * as Localization from "expo-localization";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useLayoutEffect } from "react";
+import { storage } from "../App";
 export function useLanguageSetting() {
     const { i18n } = useTranslation();
 
-    function changeLanguage(lang: string) {
+    async function changeLanguage(lang: string) {
         i18n.changeLanguage(lang);
-        try {
-            AsyncStorage.setItem("language", lang);
-        } catch (error) {
-            console.log(error);
-        }
+
+        storage.set("language", lang);
     }
 
     function setLocationLanguage() {
@@ -22,7 +19,7 @@ export function useLanguageSetting() {
     }
 
     async function checkLanguageFromStorage() {
-        const languageStorage = await AsyncStorage.getItem("language");
+        const languageStorage = storage.getString("language");
 
         if (languageStorage) {
             changeLanguage(languageStorage === "pl" ? "pl" : "en");

@@ -3,7 +3,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { ExpensesList } from "./ExpensesList";
 import { ExpensesSummary } from "./ExpensesSummary";
 import { GlobalColors } from "../../constants/styles";
-import { useUpdateAsyncStorage } from "../../hooks/useUpdateAsyncStorage";
+import { useUpdateStorage } from "../../hooks/useUpdateStorage";
 import { OneExpense } from "../../@types/OneExpense";
 import { useTranslation } from "react-i18next";
 
@@ -14,7 +14,7 @@ export function ExpensesOutput({
     expenses: Array<OneExpense>;
     periodExpenses: string;
 }) {
-    useUpdateAsyncStorage();
+    useUpdateStorage();
     const { t } = useTranslation();
     return (
         <View style={styles.container}>

@@ -1,7 +1,7 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SettingsInterface } from "../@types/_reducers/SettingsInterface";
+import { storage } from "../App";
 import { setAllSettings } from "../store/settings";
 
 export function useSettingsFromStorage() {
@@ -15,9 +15,9 @@ export function useSettingsFromStorage() {
     const dispatch = useDispatch();
 
     async function saveSettings() {
-        await AsyncStorage.getItem("settings");
+        storage.getString("settings");
 
-        await AsyncStorage.setItem(
+        storage.set(
             "settings",
             JSON.stringify({
                 amountDaysInRecentScreen,
@@ -29,7 +29,7 @@ export function useSettingsFromStorage() {
     }
 
     async function setSettingsFromStorage() {
-        const settingsStorage = await AsyncStorage.getItem("settings");
+        const settingsStorage = storage.getString("settings");
 
         if (!settingsStorage) {
             return;
