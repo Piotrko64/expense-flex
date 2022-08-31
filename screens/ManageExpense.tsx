@@ -40,10 +40,6 @@ export function ManageExpense({ route, navigation }: NavigationProps) {
         });
     }, [navigation, isEditing]);
 
-    function deleteExpense() {
-        showAlert();
-    }
-
     function cancelModalHandler() {
         navigation.goBack();
     }
@@ -89,7 +85,7 @@ export function ManageExpense({ route, navigation }: NavigationProps) {
                             icon="trash"
                             color={GlobalColors.error500}
                             size={38}
-                            onPress={deleteExpense}
+                            onPress={showAlert}
                         />
                     </View>
                 )}
