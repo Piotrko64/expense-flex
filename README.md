@@ -1,4 +1,4 @@
-# <p align="center">[Expense Flex](https://expo.dev/accounts/piotrko64/projects/expense-flex/builds/1d5250cd-9d44-4689-a461-8d329cb4b0e2)</p>
+# <p align="center">[Expense Flex](https://expo.dev/accounts/piotrko64/projects/expense-flex/builds/0541283c-99fa-4a3f-b769-237214c489e4)</p>
 
 <br />
 
@@ -42,13 +42,14 @@
 
 # Instalation mobile app for your adroid device
 
-[Click this link and install app on your mobile](https://expo.dev/accounts/piotrko64/projects/expense-flex/builds/1d5250cd-9d44-4689-a461-8d329cb4b0e2)
+[Click this link and install app on your mobile](https://expo.dev/accounts/piotrko64/projects/expense-flex/builds/0541283c-99fa-4a3f-b769-237214c489e4)
 
 Or use Code QR
 
 <br/>
 
-![image](https://user-images.githubusercontent.com/77500425/193453842-8f4f1195-49c8-4c2d-ad0b-dd901ebc9a6e.png)
+![image](https://user-images.githubusercontent.com/77500425/193455226-c4d9f030-dc2d-4643-afa7-b22618464b14.png)
+
 
 
 
